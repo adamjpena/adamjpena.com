@@ -1,0 +1,41 @@
+.social-links {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  justify-content: space-evenly;
+  padding: 0.5rem 33% 0;
+
+  a {
+    color: $pale;
+    padding: 0.5rem;
+
+    &:hover {
+      color: $rust;
+    }
+  }
+}
+
+.skill-badge {
+  &__icon {
+    color: $purple;
+    font-size: 8rem;
+  }
+
+  &__info {
+    color: $purple;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-extra-small;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .skill-badge {
+    &__icon {
+      font-size: 10rem;
+    }
+
+    &__info {
+      font-size: $font-size-small;
+    }
+  }
+}

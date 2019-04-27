@@ -1,0 +1,59 @@
+.button {
+  border: 2px solid $white;
+  box-sizing: inherit;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font-size-button;
+  padding: 1rem 2rem;
+  transition: all .25s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $black;
+    text-decoration: none;
+  }
+
+  &--inverted {
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
+
+.cta {
+  margin-top: 2rem;
+  min-width: 18.5rem;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &__icon {
+    display: inline-block;
+    padding-left: 1rem;
+    transition: all .25s;
+  }
+
+  &--inactive:hover .cta {
+    &__icon {
+      animation: shake 0.82s infinite;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--active .cta {
+    &__icon {
+      animation: blastoff 1.6s ease-in;
+      animation-fill-mode: forwards;
+      color: $rust;
+      transform: rotate(-45deg);
+    }
+  }
+}

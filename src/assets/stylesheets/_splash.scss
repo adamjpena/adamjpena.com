@@ -1,0 +1,47 @@
+.splash {
+  background-color: #090a1a;
+  background-image: url('../images/nebula-background.jpg');
+  background-position: 0;
+  color: $white;
+  height: calc(100vh + 5.3rem);
+  padding-bottom: 0;
+  position: relative;
+
+  &::after {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=) repeat;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &__container {
+    height: 100vh;
+  }
+
+  &__content {
+    z-index: 2;
+  }
+
+  &__stars {
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 105vw;
+    z-index: 1;
+  }
+
+  .stars-js-canvas-el {
+    animation: reveal 0.6s ease-in;
+  }
+}
+
+@media (min-width: 1824px) {
+  .splash {
+    background-size: 105%;
+  }
+}

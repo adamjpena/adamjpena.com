@@ -1,0 +1,14 @@
+.home {
+  text-align: center;
+
+  &__section {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .home__section {
+    height: 100vh;
+  }
+}

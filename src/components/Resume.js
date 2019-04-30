@@ -14,7 +14,7 @@ const Resume = () => (
       <hr className="resume__hr" />
       <div className="resume__row">
         <div className="resume__column resume__column--right pull-right">
-          <div className="hidden-sm hidden-md hidden-lg">
+          <div className="hidden-sm hidden-md hidden-lg hide-print">
             <div className="resume__heading-1">
               OBJECTIVE
             </div>
@@ -118,7 +118,7 @@ const Resume = () => (
           </div>
         </div>
         <div className="resume__column resume__column--left pull-left-sm">
-          <div className="hidden-xs">
+          <div className="hidden-xs show-print">
             <div className="resume__heading-1">
               OBJECTIVE
             </div>

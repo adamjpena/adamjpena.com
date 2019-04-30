@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { scroller, Element } from 'react-scroll';
-import Nav from './Nav';
 
 const transitionDuration = 1600;
 
@@ -162,6 +162,7 @@ class Splash extends Component {
 
   render() {
     const { blastoffActive } = this.state;
+    const { children } = this.props;
     return (
       <Element name="splash">
         <div onMouseMove={this.onMouseMove.bind(this)}>
@@ -196,12 +197,16 @@ class Splash extends Component {
                 </button>
               </div>
             </div>
-            <Nav />
+            { children }
           </section>
         </div>
       </Element>
     );
   }
 }
+
+Splash.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Splash;

@@ -1,0 +1,157 @@
+$resume-width: 820px;
+
+.resume {
+  background-color: darken(#fff, 25%);
+  color: $black;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.25;
+  min-height: 100vh;
+
+  &__bolder {
+    font-weight: $font-weight-bolder;
+  }
+
+  &__normal {
+    font-weight: $font-weight-normal;
+  }
+
+  &__link {
+    color: $black;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__page {
+    background-color: #fff;
+    max-width: 100%;
+    padding-bottom: 3.5rem;
+    width: $resume-width;
+  }
+
+  &__header {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3.8rem;
+  }
+
+  &__subtitle {
+    font-size: 1.8rem;
+    font-weight: $font-weight-normal;
+  }
+
+  &__hr {
+    border-top-color: $black;
+    border-top-width: 2px;
+    margin: 0;
+  }
+
+  &__heading-1 {
+    font-size: 1.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+
+  &__heading-2 {
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &__heading-3 {
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+
+  &__ul {
+    margin-bottom: 1rem;
+    padding-left: 1.6rem;
+
+    li > span {
+      position: relative;
+      left: -.2em;
+    }
+  }
+
+  &__stack {
+    list-style-type: none;
+  }
+
+  &__column {
+    display: inline-block;
+    float: left;
+    padding: 0 2rem;
+
+    &:nth-of-type(1) {
+      padding-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: $resume-width + 1) {
+  .resume {
+    padding: 8rem 0;
+
+    &__page {
+      box-shadow: 2px 2px 1px lighten($black, 30%);
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .resume {
+    &__column {
+      padding-top: 2rem;
+
+      &--left {
+        float: left;
+        padding-left: 4.5rem;
+        padding-right: 1.5rem;
+        width: 30%;
+      }
+
+      &--right {
+        float: right;
+        padding-left: 3rem;
+        padding-right: 4.5rem;
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media print {
+  .resume {
+    &__page {
+      max-width: 100%;
+      padding-bottom: 0;
+      width: 100%;
+    }
+
+    &__header {
+      padding-top: 0;
+    }
+
+    &__column {
+      padding-top: 2rem;
+
+      &--left {
+        width: 36%;
+      }
+
+      &--right {
+        width: 64%;
+      }
+    }
+
+    a[href]:after {
+      content: none !important;
+    }
+  }
+}

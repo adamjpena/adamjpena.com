@@ -1,8 +1,5 @@
-@import 'variables/fonts';
-@import 'variables/colors';
+@import 'base';
 
-@import 'grid';
-@import 'typography';
 @import 'headings';
 @import 'keyframes';
 @import 'transition';
@@ -10,4 +7,7 @@
 
 @import 'home';
 @import 'splash';
+@import 'nav';
 @import 'about';
+
+@import 'resume';

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { scroller, Element } from 'react-scroll';
+import Nav from './Nav';
 
 const transitionDuration = 1600;
 
@@ -195,6 +196,7 @@ class Splash extends Component {
                 </button>
               </div>
             </div>
+            <Nav />
           </section>
         </div>
       </Element>

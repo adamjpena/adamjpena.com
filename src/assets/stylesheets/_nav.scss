@@ -1,0 +1,26 @@
+$nav-height: 5.3rem;
+
+.nav {
+  height: $nav-height;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  &__link {
+    color: $white;
+    display: inline-block;
+    line-height: $nav-height;
+    padding: 0 2rem;
+
+    &:hover {
+      color: $rust;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .nav {
+    text-align: left;
+  }
+}

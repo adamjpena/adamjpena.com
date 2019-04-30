@@ -26,7 +26,14 @@ const Resume = () => (
           <div className="resume__heading-1">
             EXPERIENCE
           </div>
-          <span className="resume__bolder">VISIBLY</span> (formerly Opternative)
+          <a
+            className="resume__link"
+            href="https://www.govisibly.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="resume__bolder">VISIBLY</span> (formerly Opternative)
+          </a>
           <div className="resume__normal">Software Engineer</div>
           Sep 2017 - Current | Chicago, IL
           <ul className="resume__ul">
@@ -60,7 +67,14 @@ const Resume = () => (
               </span>
             </li>
           </ul>
-          <span className="resume__bolder">ARRIVE</span> (formerly ParkWhiz)
+          <a
+            className="resume__link"
+            href="https://www.parkwhiz.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span className="resume__bolder">ARRIVE</span> (formerly ParkWhiz)
+          </a>
           <div className="resume__normal">Front End Developer</div>
           Mar 2017 - Aug 2017 | Chicago, IL
           <div className="resume__normal">Jr. Front End Developer</div>
@@ -99,7 +113,14 @@ const Resume = () => (
             CODE
           </div>
           <div className="resume__bolder margin-bottom-fourth">
-            Opternative/Visibly brand refresh, and optimization
+            <a
+              className="resume__link"
+              href="https://www.govisibly.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Opternative/Visibly brand refresh, and optimization
+            </a>
           </div>
           <div className="margin-bottom-extra">
             Worked with designers to develop and implement a brand refresh and name change for our
@@ -108,7 +129,14 @@ const Resume = () => (
             practice while refactoring and removing legacy stylesheets.
           </div>
           <div className="resume__bolder margin-bottom-fourth">
-            ParkWhiz for Business
+            <a
+              className="resume__link"
+              href="https://www.parkwhiz.com/business"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              ParkWhiz for Business
+            </a>
           </div>
           <div className="margin-bottom-extra">
             Designed and developed a business platform subdomain for businesses to find parking,

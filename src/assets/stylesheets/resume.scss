@@ -19,7 +19,8 @@ $resume-width: 820px;
   &__link {
     color: $black;
 
-    &:hover {
+    &:hover,
+    &:active {
       color: $rust;
       text-decoration: none;
     }

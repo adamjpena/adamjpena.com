@@ -162,12 +162,12 @@ const Resume = () => (
             PROGRAMMING
           </div>
           <ul className="resume__ul">
+            <li><span>Javascript</span></li>
+            <li><span>ReactJS / Native</span></li>
             <li><span>HTML5</span></li>
             <li><span>CSS3</span></li>
-            <li><span>Javascript</span></li>
-            <li><span>ReactJS</span></li>
-            <li><span>Node.js</span></li>
             <li><span>Ruby on Rails</span></li>
+            <li><span>Node.js</span></li>
             <li><span>LESS</span></li>
             <li><span>Sass</span></li>
             <li><span>Redux</span></li>

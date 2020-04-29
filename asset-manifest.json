@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/home/static/css/main.718d79e9.chunk.css",
+    "main.js": "/home/static/js/main.1038253f.chunk.js",
+    "main.js.map": "/home/static/js/main.1038253f.chunk.js.map",
+    "runtime~main.js": "/home/static/js/runtime~main.0990ee84.js",
+    "runtime~main.js.map": "/home/static/js/runtime~main.0990ee84.js.map",
+    "static/css/2.40331427.chunk.css": "/home/static/css/2.40331427.chunk.css",
+    "static/js/2.993a4572.chunk.js": "/home/static/js/2.993a4572.chunk.js",
+    "static/js/2.993a4572.chunk.js.map": "/home/static/js/2.993a4572.chunk.js.map",
+    "index.html": "/home/index.html",
+    "precache-manifest.e0c3256cef2acc25069c3c243f354dc9.js": "/home/precache-manifest.e0c3256cef2acc25069c3c243f354dc9.js",
+    "service-worker.js": "/home/service-worker.js",
+    "static/css/2.40331427.chunk.css.map": "/home/static/css/2.40331427.chunk.css.map",
+    "static/css/main.718d79e9.chunk.css.map": "/home/static/css/main.718d79e9.chunk.css.map",
+    "static/media/adam-city-vertical.jpg": "/home/static/media/adam-city-vertical.0612a06f.jpg",
+    "static/media/adam-city-vertical@2x.jpg": "/home/static/media/adam-city-vertical@2x.a59578d1.jpg",
+    "static/media/adam-city.jpg": "/home/static/media/adam-city.b43bd8db.jpg",
+    "static/media/adam-city@2x.jpg": "/home/static/media/adam-city@2x.78ea9620.jpg",
+    "static/media/font-awesome.min.css": "/home/static/media/fontawesome-webfont.fee66e71.woff",
+    "static/media/bootstrap.css": "/home/static/media/glyphicons-halflings-regular.fa277232.woff",
+    "static/media/main.scss": "/home/static/media/nebula-background.ba3bc198.jpg"
+  }
+}

@@ -5,7 +5,7 @@ import Resume from './Resume';
 import ScrollToTop from './ScrollToTop';
 
 const App = () => (
-  <Router onUpdate={() => window.scrollTo(0, 0)}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} basename={process.env.PUBLIC_URL}>
     <ScrollToTop>
       <Route exact path="/" component={Home} />
       <Route path="/resume" component={Resume} />

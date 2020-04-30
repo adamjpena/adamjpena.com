@@ -2,6 +2,7 @@ export const resumeData = {
   firstName: "Adam",
   lastName: "Peña",
   role: "Software Engineer",
+  hideProjectsPrint: true,
   objectiveSection: {
     title: "Objective",
     content:
@@ -14,7 +15,7 @@ export const resumeData = {
         title: "Programming",
         bullets: [
           "Javascript",
-          "ReactJS / Native",
+          "React.js / Native",
           "TypeScript",
           "HTML5",
           "CSS3",
@@ -79,9 +80,30 @@ export const resumeData = {
     title: "Experience",
     positions: [
       {
+        company: "Plaid",
+        url: "https://plaid.com",
+        roles: [
+          {
+            title: "Product Engineer",
+            startDate: "Aug 2019",
+            endDate: "Current",
+            location: "San Francisco, CA",
+            bullets: [
+              "Lead sprint planning, retrospectives, backlog grooming and standups",
+              "Manage mentorship and onboarding for junior engineers",
+              "Internationalize and localize site while migrating and modernizing stack",
+              "Collaborate closely with marketing and design, driving new product launches and advocating for reusable practices",
+              "Resolve site outages and bugs while oncall and field external requests"
+            ],
+            techStack:
+              "HTML5/CSS3, React.js, TypeScript, Next.js, JavaScript, Sass"
+          }
+        ]
+      },
+      {
         company: "Visibly",
-        url: "https://www.govisibly.com",
         companyDescription: "(formerly Opternative)",
+        url: "https://www.govisibly.com",
         roles: [
           {
             title: "Software Engineer",
@@ -89,20 +111,20 @@ export const resumeData = {
             endDate: "Jul 2019",
             location: "Chicago, IL",
             bullets: [
-              "Optimize user onboarding and offboarding to increase conversion rate by alleviating friction in the user experience",
-              "Architect, prototype, build, test, and deploy new interface components and functionality for online eye exam and vision care platform",
-              "Mentor junior level developers on software development process",
-              "Monitor technical support channels to document bugs and implement solutions with test coverage"
+              "Optimized user onboarding and offboarding to increase conversion rate by alleviating friction in the user experience",
+              "Architected, prototyped, built, tested, and deployed new interface features and functionality for online eye exam and vision care platform",
+              "Mentored junior level developers on software development process",
+              "Monitored technical support channels to document bugs and implement solutions with test coverage"
             ],
             techStack:
-              "HTML5/CSS3, ReactJS, Angular, JavaScript, Ruby on Rails, Sass"
+              "HTML5/CSS3, React.js, Angular, JavaScript, Ruby on Rails, Sass"
           }
         ]
       },
       {
         company: "Arrive",
-        url: "https://www.parkwhiz.com",
         companyDescription: "(formerly ParkWhiz)",
+        url: "https://www.parkwhiz.com",
         roles: [
           {
             title: "Front End Developer",
@@ -116,13 +138,13 @@ export const resumeData = {
             endDate: "Mar 2017",
             location: "Chicago, IL",
             bullets: [
-              "Overhauled parking widget to leverage new API endpoints to acutely reduce load time while extending functionality and adaptability to partner specs",
-              "Designed and developed responsive site-wide refreshes, landing pages and email templates",
+              "Overhauled parking widget to leverage new API endpoints to enhance performance while extending functionality and adaptability for partners",
+              "Designed and developed site-wide refreshes, landing pages and emails",
               "Identified A/B test opportunities for site improvements",
-              "Investigated and fixed reported issues and wrote tests to prevent regression"
+              "Investigated and fixed bugs and wrote tests to prevent regression"
             ],
             techStack:
-              "HTML5/CSS3, ReactJS, JavaScript, Ruby on Rails, Haml, Sass, PHP"
+              "HTML5/CSS3, React.js, JavaScript, Ruby on Rails, Sass, PHP"
           }
         ]
       }

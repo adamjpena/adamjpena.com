@@ -68,19 +68,21 @@ const Resume = () => (
               ))}
             </React.Fragment>
           ))}
-          <div className="resume__heading-1">
-            {resumeData.projectsSection.title.toUpperCase()}
+          <div className={resumeData.hideProjectsPrint ? "hide-print" : ""}>
+            <div className="resume__heading-1">
+              {resumeData.projectsSection.title.toUpperCase()}
+            </div>
+            {resumeData.projectsSection.projects.map((project, i) => (
+              <React.Fragment key={`projects-${i}`}>
+                <div className="resume__bolder margin-bottom-fourth">
+                  <a className="resume__link" href={project.url}>
+                    {project.title}
+                  </a>
+                </div>
+                <div className="margin-bottom-extra">{project.content}</div>
+              </React.Fragment>
+            ))}
           </div>
-          {resumeData.projectsSection.projects.map((project, i) => (
-            <React.Fragment key={`projects-${i}`}>
-              <div className="resume__bolder margin-bottom-fourth">
-                <a className="resume__link" href={project.url}>
-                  {project.title}
-                </a>
-              </div>
-              <div className="margin-bottom-extra">{project.content}</div>
-            </React.Fragment>
-          ))}
         </div>
         <div className="resume__column resume__column--left pull-left-sm">
           <div className="hidden-xs show-print">

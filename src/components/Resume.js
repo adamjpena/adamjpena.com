@@ -1,259 +1,133 @@
 import React from "react";
+import { resumeData } from "../store/resume";
+
+const ObjectiveContent = () => (
+  <React.Fragment>
+    <div className="resume__heading-1">
+      {resumeData.objectiveSection.title.toUpperCase()}
+    </div>
+    <div className="resume__heading-3">
+      {resumeData.objectiveSection.content}
+    </div>
+  </React.Fragment>
+);
 
 const Resume = () => (
   <div className="resume flex">
     <div className="resume__page">
       <div className="resume__header">
         <div className="resume__title">
-          ADAM <span className="resume__normal">PEÑA</span>
+          {resumeData.firstName.toUpperCase()}{" "}
+          <span className="resume__normal">
+            {resumeData.lastName.toUpperCase()}
+          </span>
         </div>
-        <div className="resume__subtitle">SOFTWARE ENGINEER</div>
+        <div className="resume__subtitle">{resumeData.role.toUpperCase()}</div>
       </div>
       <hr className="resume__hr" />
       <div className="resume__row">
         <div className="resume__column resume__column--right pull-right">
           <div className="hidden-sm hidden-md hidden-lg hide-print">
-            <div className="resume__heading-1">OBJECTIVE</div>
-            <div className="resume__heading-3">
-              Developer with a keen eye for design and a passion for innovation
-              and experimentation to enhance the user experience
-            </div>
+            <ObjectiveContent />
           </div>
-          <div className="resume__heading-1">EXPERIENCE</div>
-          <a
-            className="resume__link"
-            href="https://www.govisibly.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span className="resume__bolder">VISIBLY</span> (formerly
-            Opternative)
-          </a>
-          <div className="resume__normal">Software Engineer</div>
-          Sep 2017 - Current | Chicago, IL
-          <ul className="resume__ul">
-            <li>
-              <span>
-                Optimize user onboarding and offboarding to increase conversion
-                rate by alleviating friction in the user experience
-              </span>
-            </li>
-            <li>
-              <span>
-                Architect, prototype, build, test, and deploy new interface
-                components and functionality for online eye exam and vision care
-                platform
-              </span>
-            </li>
-            <li>
-              <span>
-                Mentor junior level developers on software development process
-              </span>
-            </li>
-            <li>
-              <span>
-                Monitor technical support channels to document bugs and
-                implement solutions with test coverage
-              </span>
-            </li>
-            <li className="resume__stack">
-              <span>
-                <span className="resume__normal">Tech</span>: HTML5/CSS3,
-                ReactJS, Angular, JavaScript, Ruby on Rails, Sass
-              </span>
-            </li>
-          </ul>
-          <a
-            className="resume__link"
-            href="https://www.parkwhiz.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <span className="resume__bolder">ARRIVE</span> (formerly ParkWhiz)
-          </a>
-          <div className="resume__normal">Front End Developer</div>
-          Mar 2017 - Aug 2017 | Chicago, IL
-          <div className="resume__normal">Jr. Front End Developer</div>
-          Mar 2016 - Aug 2017 | Chicago, IL
-          <ul className="resume__ul">
-            <li>
-              <span>
-                Overhauled parking widget to leverage new API endpoints to
-                acutely reduce load time while extending functionality and
-                adaptability to partner specs
-              </span>
-            </li>
-            <li>
-              <span>
-                Designed and developed responsive site-wide refreshes, landing
-                pages and email templates
-              </span>
-            </li>
-            <li>
-              <span>
-                Identified A/B test opportunities for site improvements
-              </span>
-            </li>
-            <li>
-              <span>
-                Investigated and fixed reported issues and wrote tests to
-                prevent regression
-              </span>
-            </li>
-            <li className="resume__stack">
-              <span>
-                <span className="resume__normal">Tech</span>: HTML5/CSS3,
-                ReactJS, JavaScript, Ruby on Rails, Haml, Sass, PHP
-              </span>
-            </li>
-          </ul>
-          <div className="resume__heading-1">CODE</div>
-          <div className="resume__bolder margin-bottom-fourth">
-            <a
-              className="resume__link"
-              href="https://www.govisibly.com"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Opternative/Visibly brand refresh, and optimization
-            </a>
+          <div className="resume__heading-1">
+            {resumeData.experienceSection.title.toUpperCase()}
           </div>
-          <div className="margin-bottom-extra">
-            Worked with designers to develop and implement a brand refresh and
-            name change for our high volume, consumer facing site. Revamped user
-            experience with new streamlined interactions. Improved load speed by
-            advocating for and adopting reusable design practice while
-            refactoring and removing legacy stylesheets.
+          {resumeData.experienceSection.positions.map((item, i) => (
+            <React.Fragment key={`experience-positions-${i}`}>
+              <a className="resume__link" href="https://www.govisibly.com">
+                <span className="resume__bolder">
+                  {item.company.toUpperCase()}
+                </span>
+                {item.companyDescription ? ` ${item.companyDescription}` : null}
+              </a>
+              {item.roles.map((role, i) => (
+                <React.Fragment key={`${item.company}-roles-${i}`}>
+                  <div className="resume__normal">{role.title}</div>
+                  <div>
+                    {role.startDate} - {role.endDate} | {role.location}
+                  </div>
+                  {!role.bullets ? null : (
+                    <ul className="resume__ul">
+                      {role.bullets.map((bullet, i) => (
+                        <li key={`${item.company}-{role.title}-bullet-${i}`}>
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                      {!role.techStack ? null : (
+                        <li className="resume__stack">
+                          <span>
+                            <span className="resume__normal">Tech</span>:{" "}
+                            {role.techStack}
+                          </span>
+                        </li>
+                      )}
+                    </ul>
+                  )}
+                </React.Fragment>
+              ))}
+            </React.Fragment>
+          ))}
+          <div className="resume__heading-1">
+            {resumeData.projectsSection.title.toUpperCase()}
           </div>
-          <div className="resume__bolder margin-bottom-fourth">
-            <a
-              className="resume__link"
-              href="https://www.parkwhiz.com/business"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              ParkWhiz for Business
-            </a>
-          </div>
-          <div className="margin-bottom-extra">
-            Designed and developed a business platform subdomain for businesses
-            to find parking, book and manage employee and visitor parking.
-            Elevated a basic interface to a modernized, cross-browser compatible
-            and responsive portal for over 40% of ParkWhiz’s repeat customers
-            driving significant savings for partners.
-          </div>
+          {resumeData.projectsSection.projects.map((project, i) => (
+            <React.Fragment key={`projects-${i}`}>
+              <div className="resume__bolder margin-bottom-fourth">
+                <a className="resume__link" href={project.url}>
+                  {project.title}
+                </a>
+              </div>
+              <div className="margin-bottom-extra">{project.content}</div>
+            </React.Fragment>
+          ))}
         </div>
         <div className="resume__column resume__column--left pull-left-sm">
           <div className="hidden-xs show-print">
-            <div className="resume__heading-1">OBJECTIVE</div>
-            <div className="resume__heading-3">
-              Developer with a keen eye for design and a passion for innovation
-              and experimentation to enhance the user experience
-            </div>
+            <ObjectiveContent />
           </div>
-          <div className="resume__heading-1">SKILLS</div>
-          <div className="resume__heading-2">PROGRAMMING</div>
-          <ul className="resume__ul">
-            <li>
-              <span>Javascript</span>
-            </li>
-            <li>
-              <span>ReactJS / Native</span>
-            </li>
-            <li>
-              <span>HTML5</span>
-            </li>
-            <li>
-              <span>CSS3</span>
-            </li>
-            <li>
-              <span>Ruby on Rails</span>
-            </li>
-            <li>
-              <span>Node.js</span>
-            </li>
-            <li>
-              <span>LESS</span>
-            </li>
-            <li>
-              <span>Sass</span>
-            </li>
-            <li>
-              <span>Redux</span>
-            </li>
-            <li>
-              <span>jQuery</span>
-            </li>
-            <li>
-              <span>HAML</span>
-            </li>
-            <li>
-              <span>Jest</span>
-            </li>
-            <li>
-              <span>RSpec</span>
-            </li>
-            <li>
-              <span>Webpack</span>
-            </li>
-            <li>
-              <span>Docker</span>
-            </li>
-            <li>
-              <span>Bootstrap</span>
-            </li>
-            <li>
-              <span>Shell</span>
-            </li>
-          </ul>
-          <div className="resume__heading-2">TOOLS</div>
-          <ul className="resume__ul">
-            <li>
-              <span>Git/GitHub</span>
-            </li>
-            <li>
-              <span>Docker</span>
-            </li>
-            <li>
-              <span>Pivotal</span>
-            </li>
-            <li>
-              <span>JIRA</span>
-            </li>
-            <li>
-              <span>Zeplin</span>
-            </li>
-            <li>
-              <span>Photoshop</span>
-            </li>
-            <li>
-              <span>Illustrator</span>
-            </li>
-          </ul>
-          <div className="resume__heading-1">EDUCATION</div>
-          <div className="resume__bolder">UNIVERSITY OF ILLINOIS</div>
-          <div className="resume__normal">B.S. Community Health</div>
-          <div>May 2014 | Champaign, IL</div>
-          <div className="margin-bottom">Dean's List</div>
-          <div className="resume__heading-1">LINKS</div>
-          <div>
-            <a className="resume__link" href="https://www.github.com/adamjpena">
-              GitHub:&#47;&#47; adamjpena
-            </a>
+          <div className="resume__heading-1">
+            {resumeData.skillsSection.title.toUpperCase()}
           </div>
-          <div>
-            <a
-              className="resume__link"
-              href="https://www.linkedin.com/in/adamjpena"
-            >
-              LinkedIn:&#47;&#47; adamjpena
-            </a>
+          {resumeData.skillsSection.sections.map((section, i) => (
+            <React.Fragment key={`skills-${i}`}>
+              <div className="resume__heading-2">
+                {section.title.toUpperCase()}
+              </div>
+              <ul className="resume__ul">
+                {section.bullets.map((bullet, i) => (
+                  <li key={`${section.title}-bullet-${i}`}>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </React.Fragment>
+          ))}
+          <div className="resume__heading-1">
+            {resumeData.educationSection.title.toUpperCase()}
           </div>
-          <div>
-            <a className="resume__link" href="https://adamjpena.com">
-              adamjpena.com
-            </a>
+          {resumeData.educationSection.schools.map((school, i) => (
+            <React.Fragment key={`school-${i}`}>
+              <div className="resume__bolder">{school.name}</div>
+              <div className="resume__normal">{school.degree}</div>
+              <div>
+                {school.graduationDate} | {school.location}
+              </div>
+              <div className="margin-bottom">{school.accolades}</div>
+            </React.Fragment>
+          ))}
+          <div className="resume__heading-1">
+            {resumeData.linksSection.title.toUpperCase()}
           </div>
+          {resumeData.linksSection.links.map((link, i) => (
+            <React.Fragment key={`links-${i}`}>
+              <div>
+                <a className="resume__link" href={link.url}>
+                  {link.text}
+                </a>
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </div>

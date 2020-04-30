@@ -1,6 +1,6 @@
 export const resumeData = {
   firstName: "Adam",
-  lastName: "Pena",
+  lastName: "Peña",
   role: "Software Engineer",
   objectiveSection: {
     title: "Objective",
@@ -33,7 +33,7 @@ export const resumeData = {
         ]
       },
       {
-        tools: "Tools",
+        title: "Tools",
         bullets: [
           "Git/GitHub",
           "Docker",
@@ -52,9 +52,9 @@ export const resumeData = {
       {
         name: "University of Illinois",
         degree: "B.S. Community Health",
-        graduation: "May 2014",
+        graduationDate: "May 2014",
         location: "Champaign, IL",
-        accolades: ["Dean's List"]
+        accolades: "Dean's List"
       }
     ]
   },
@@ -80,12 +80,13 @@ export const resumeData = {
     positions: [
       {
         company: "Visibly",
+        url: "https://www.govisibly.com",
         companyDescription: "(formerly Opternative)",
         roles: [
           {
             title: "Software Engineer",
-            start: "Sep 2017",
-            end: "Jul 2019",
+            startDate: "Sep 2017",
+            endDate: "Jul 2019",
             location: "Chicago, IL",
             bullets: [
               "Optimize user onboarding and offboarding to increase conversion rate by alleviating friction in the user experience",
@@ -100,18 +101,19 @@ export const resumeData = {
       },
       {
         company: "Arrive",
+        url: "https://www.parkwhiz.com",
         companyDescription: "(formerly ParkWhiz)",
         roles: [
           {
             title: "Front End Developer",
-            start: "Mar 2017",
-            end: "Aug 2017",
+            startDate: "Mar 2017",
+            endDate: "Aug 2017",
             location: "Chicago, IL"
           },
           {
             title: "Jr. Front End Developer",
-            start: "Mar 2016",
-            end: "Mar 2017",
+            startDate: "Mar 2016",
+            endDate: "Mar 2017",
             location: "Chicago, IL",
             bullets: [
               "Overhauled parking widget to leverage new API endpoints to acutely reduce load time while extending functionality and adaptability to partner specs",
@@ -131,13 +133,13 @@ export const resumeData = {
     projects: [
       {
         title: "Opternative/Visibly brand refresh, and optimization",
-        url: "https://www.github.com/adamjpena",
+        url: "https://www.govisibly.com",
         content:
           "Worked with designers to develop and implement a brand refresh and name change for our high volume, consumer facing site. Revamped user experience with new streamlined interactions. Improved load speed by advocating for and adopting reusable design practice while refactoring and removing legacy stylesheets."
       },
       {
-        title: "LinkedIn:// adamjpena",
-        url: "https://www.linkedin.com/in/adamjpena",
+        title: "ParkWhiz for Business",
+        url: "https://www.parkwhiz.com/business",
         content:
           "Designed and developed a business platform subdomain for businesses to find parking, book and manage employee and visitor parking. Elevated a basic interface to a modernized, cross-browser compatible and responsive portal for over 40% of ParkWhiz’s repeat customers driving significant savings for partners."
       }

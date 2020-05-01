@@ -2,7 +2,8 @@ export const resumeData = {
   firstName: "Adam",
   lastName: "Peña",
   role: "Software Engineer",
-  hideProjectsPrint: true,
+  hideProjectsPrint: false,
+  home: "HOME",
   objectiveSection: {
     title: "Objective",
     content:
@@ -114,7 +115,7 @@ export const resumeData = {
               "Optimized user onboarding and offboarding to increase conversion rate by alleviating friction in the user experience",
               "Architected, prototyped, built, tested, and deployed new interface features and functionality for online eye exam and vision care platform",
               "Mentored junior level developers on software development process",
-              "Monitored technical support channels to document bugs and implement solutions with test coverage"
+              "Documented bugs and implemented solutions with test coverage"
             ],
             techStack:
               "HTML5/CSS3, React.js, Angular, JavaScript, Ruby on Rails, Sass"

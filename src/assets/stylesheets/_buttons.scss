@@ -1,28 +1,46 @@
 .button {
+  background-color: $white;
   border: 2px solid $white;
+  border-radius: 5px;
   box-sizing: inherit;
-  color: $white;
+  color: $black;
   cursor: pointer;
   display: inline-block;
   font-size: $font-size-button;
   padding: 1rem 2rem;
-  transition: all .25s;
+  transition: all 0.25s;
 
   &:hover,
   &:focus,
   &:active {
-    color: $black;
+    background-color: darken($white, 5%);
+    border-color: darken($white, 5%);
     text-decoration: none;
   }
 
   &--inverted {
     background-color: transparent;
+    color: $white;
 
     &:hover,
     &:focus,
     &:active {
       background-color: $white;
       color: $black;
+    }
+  }
+
+  &--as-text {
+    background-color: transparent;
+    border-color: transparent;
+    color: $teal;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      border-color: transparent;
+      color: $rust;
     }
   }
 }
@@ -38,7 +56,7 @@
   &__icon {
     display: inline-block;
     padding-left: 1rem;
-    transition: all .25s;
+    transition: all 0.25s;
   }
 
   &--inactive:hover .cta {

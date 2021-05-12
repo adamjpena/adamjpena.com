@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { scroller, Element } from 'react-scroll';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { scroller, Element } from "react-scroll";
 
 const transitionDuration = 1600;
 
@@ -18,13 +18,13 @@ class Splash extends Component {
   }
 
   componentDidMount() {
-    const stars = document.createElement('script');
-    stars.type = 'text/javascript';
+    const stars = document.createElement("script");
+    stars.type = "text/javascript";
     stars.src = `${process.env.PUBLIC_URL}/animations/stars.min.js`;
 
     document.head.appendChild(stars);
     stars.onload = () => {
-      window.starsJS('stars', {
+      window.starsJS("stars", {
         stars: {
           number: {
             value: 160,
@@ -34,19 +34,19 @@ class Splash extends Component {
             },
           },
           color: {
-            value: '#fff',
+            value: "#fff",
           },
           shape: {
-            type: 'circle',
+            type: "circle",
             stroke: {
               width: 0,
-              color: '#000',
+              color: "#000",
             },
             polygon: {
               nb_sides: 5,
             },
             image: {
-              src: 'img/github.svg',
+              src: "img/github.svg",
               width: 100,
               height: 100,
             },
@@ -74,17 +74,17 @@ class Splash extends Component {
           line_linked: {
             enable: false,
             distance: 150,
-            color: '#fff',
+            color: "#fff",
             opacity: 0.4,
             width: 1,
           },
           move: {
             enable: true,
             speed: 1,
-            direction: 'none',
+            direction: "none",
             random: true,
             straight: false,
-            out_mode: 'out',
+            out_mode: "out",
             bounce: false,
             attract: {
               enable: false,
@@ -94,15 +94,15 @@ class Splash extends Component {
           },
         },
         interactivity: {
-          detect_on: 'canvas',
+          detect_on: "canvas",
           events: {
             onhover: {
               enable: true,
-              mode: 'bubble',
+              mode: "bubble",
             },
             onclick: {
               enable: true,
-              mode: 'repulse',
+              mode: "repulse",
             },
             resize: true,
           },
@@ -147,11 +147,11 @@ class Splash extends Component {
 
   blastoff() {
     this.setState({ blastoffActive: true });
-    scroller.scrollTo('about', {
+    scroller.scrollTo("about", {
       duration: 1500,
       delay: 300,
       isDynamic: true,
-      smooth: 'easeInOutCubic',
+      smooth: "easeInOutCubic",
       offset: 50,
     });
     this.blastoffTimer = setTimeout(() => {
@@ -172,14 +172,10 @@ class Splash extends Component {
               <div className="splash__content flex container noselect">
                 <h1 className="h1 margin-top-0">
                   <div>
-                    Hi&#33; I&#39;m
-                    {' '}
-                    <span className="h1__accent">Adam Peña</span>
-,
+                    Hi&#33; I&#39;m{" "}
+                    <span className="h1__accent">Adam Peña</span>,
                   </div>
-                  <div>
-                    full-stack software engineer.
-                  </div>
+                  <div>full-stack software engineer.</div>
                 </h1>
                 <button
                   type="button"
@@ -187,17 +183,17 @@ class Splash extends Component {
                     button
                     button--inverted
                     cta
-                    cta--${blastoffActive ? '' : 'in'}active
+                    cta--${blastoffActive ? "" : "in"}active
                     flex
                   `}
                   onClick={this.blastoff}
                 >
-                  Show me code
+                  Let&#39;s go
                   <i className="cta__icon fa fa-rocket" />
                 </button>
               </div>
             </div>
-            { children }
+            {children}
           </section>
         </div>
       </Element>

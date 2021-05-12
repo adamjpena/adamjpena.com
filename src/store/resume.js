@@ -7,7 +7,7 @@ export const resumeData = {
   objectiveSection: {
     title: "Objective",
     content:
-      "Developer with a keen eye for design and a passion for innovation and experimentation to enhance the user experience"
+      "Developer with a keen eye for design and a passion for innovation and experimentation to enhance the user experience",
   },
   skillsSection: {
     title: "Skills",
@@ -25,14 +25,15 @@ export const resumeData = {
           "LESS",
           "Sass",
           "Redux",
+          "Kubernetes",
           "jQuery",
           "Jest",
           "RSpec",
           "Webpack",
           "Docker",
           "Bootstrap",
-          "Shell"
-        ]
+          "Shell",
+        ],
       },
       {
         title: "Tools",
@@ -43,10 +44,10 @@ export const resumeData = {
           "JIRA",
           "Zeplin",
           "Photoshop",
-          "Illustrator"
-        ]
-      }
-    ]
+          "Illustrator",
+        ],
+      },
+    ],
   },
   educationSection: {
     title: "Education",
@@ -56,26 +57,26 @@ export const resumeData = {
         degree: "B.S. Community Health",
         graduationDate: "May 2014",
         location: "Champaign, IL",
-        accolades: "Dean's List"
-      }
-    ]
+        accolades: "Dean's List",
+      },
+    ],
   },
   linksSection: {
     title: "Links",
     links: [
       {
         text: "GitHub:// adamjpena",
-        url: "https://www.github.com/adamjpena"
+        url: "https://www.github.com/adamjpena",
       },
       {
         text: "LinkedIn:// adamjpena",
-        url: "https://www.linkedin.com/in/adamjpena"
+        url: "https://www.linkedin.com/in/adamjpena",
       },
       {
         text: "adamjpena.com",
-        url: "https://adamjpena.com"
-      }
-    ]
+        url: "https://adamjpena.com",
+      },
+    ],
   },
   experienceSection: {
     title: "Experience",
@@ -85,21 +86,21 @@ export const resumeData = {
         url: "https://plaid.com",
         roles: [
           {
-            title: "Product Engineer",
+            title: "Software Engineer",
             startDate: "Aug 2019",
             endDate: "Current",
-            location: "San Francisco, CA",
+            location: "Remote / San Francisco, CA",
             bullets: [
               "Lead sprint planning, retrospectives, backlog grooming and standups",
+              "Collaborate with marketing and design to drive new product launches while advocating reusable practices",
               "Manage mentorship and onboarding for junior engineers",
               "Internationalize and localize site while migrating and modernizing stack",
-              "Collaborate closely with marketing and design, driving new product launches and advocating for reusable practices",
-              "Resolve site outages and bugs while oncall and field external requests"
+              "Resolve site outages and bugs and field external requests",
             ],
             techStack:
-              "HTML5/CSS3, React.js, TypeScript, Next.js, JavaScript, Sass"
-          }
-        ]
+              "HTML5/CSS3, React.js, TypeScript, Next.js, JavaScript, Sass, Kubernetes",
+          },
+        ],
       },
       {
         company: "Visibly",
@@ -115,12 +116,12 @@ export const resumeData = {
               "Optimized user onboarding and offboarding to increase conversion rate by alleviating friction in the user experience",
               "Architected, prototyped, built, tested, and deployed new interface features and functionality for online eye exam and vision care platform",
               "Mentored junior level developers on software development process",
-              "Documented bugs and implemented solutions with test coverage"
+              "Documented bugs and implemented solutions with test coverage",
             ],
             techStack:
-              "HTML5/CSS3, React.js, Angular, JavaScript, Ruby on Rails, Sass"
-          }
-        ]
+              "HTML5/CSS3, React.js, Angular, JavaScript, Ruby on Rails, Sass",
+          },
+        ],
       },
       {
         company: "Arrive",
@@ -131,7 +132,7 @@ export const resumeData = {
             title: "Front End Developer",
             startDate: "Mar 2017",
             endDate: "Aug 2017",
-            location: "Chicago, IL"
+            location: "Chicago, IL",
           },
           {
             title: "Jr. Front End Developer",
@@ -142,14 +143,14 @@ export const resumeData = {
               "Overhauled parking widget to leverage new API endpoints to enhance performance while extending functionality and adaptability for partners",
               "Designed and developed site-wide refreshes, landing pages and emails",
               "Identified A/B test opportunities for site improvements",
-              "Investigated and fixed bugs and wrote tests to prevent regression"
+              "Investigated and fixed bugs and wrote tests to prevent regression",
             ],
             techStack:
-              "HTML5/CSS3, React.js, JavaScript, Ruby on Rails, Sass, PHP"
-          }
-        ]
-      }
-    ]
+              "HTML5/CSS3, React.js, JavaScript, Ruby on Rails, Sass, PHP",
+          },
+        ],
+      },
+    ],
   },
   projectsSection: {
     title: "Code",
@@ -158,14 +159,14 @@ export const resumeData = {
         title: "Opternative/Visibly brand refresh, and optimization",
         url: "https://www.govisibly.com",
         content:
-          "Worked with designers to develop and implement a brand refresh and name change for our high volume, consumer facing site. Revamped user experience with new streamlined interactions. Improved load speed by advocating for and adopting reusable design practice while refactoring and removing legacy stylesheets."
+          "Worked with designers to develop and implement a brand refresh and name change for our high volume, consumer facing site. Revamped user experience with new streamlined interactions. Improved load speed by advocating for and adopting reusable design practice while refactoring and removing legacy stylesheets.",
       },
       {
         title: "ParkWhiz for Business",
         url: "https://www.parkwhiz.com/business",
         content:
-          "Designed and developed a business platform subdomain for businesses to find parking, book and manage employee and visitor parking. Elevated a basic interface to a modernized, cross-browser compatible and responsive portal for over 40% of ParkWhiz’s repeat customers driving significant savings for partners."
-      }
-    ]
-  }
+          "Designed and developed a business platform subdomain for businesses to find parking, book and manage employee and visitor parking. Elevated a basic interface to a modernized, cross-browser compatible and responsive portal for over 40% of ParkWhiz’s repeat customers driving significant savings for partners.",
+      },
+    ],
+  },
 };

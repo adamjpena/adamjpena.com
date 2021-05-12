@@ -19,7 +19,7 @@ class Resume extends Component {
     this.showContactInfo = this.showContactInfo.bind(this);
 
     this.state = {
-      shouldShowContactInfo: false
+      shouldShowContactInfo: false,
     };
   }
 
@@ -99,7 +99,7 @@ class Resume extends Component {
               </div>
               {resumeData.experienceSection.positions.map((item, i) => (
                 <React.Fragment key={`experience-positions-${i}`}>
-                  <a className="resume__link" href="https://www.govisibly.com">
+                  <a className="resume__link" href={item.url}>
                     <span className="resume__bolder">
                       {item.company.toUpperCase()}
                     </span>

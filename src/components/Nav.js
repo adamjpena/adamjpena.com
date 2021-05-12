@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-import '../assets/stylesheets/main.scss';
+import "../assets/stylesheets/main.scss";
 
 class Nav extends Component {
   constructor(props) {
@@ -11,11 +11,11 @@ class Nav extends Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll() {
@@ -36,18 +36,24 @@ class Nav extends Component {
 
     return (
       <div
-        ref={(node) => { this.node = node }}
+        ref={(node) => {
+          this.node = node;
+        }}
         className={`
           nav
-          ${sticky ? 'nav--sticky' : ''}
-          ${active ? 'nav--active' : ''}
+          ${sticky ? "nav--sticky" : ""}
+          ${active ? "nav--active" : ""}
         `}
       >
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-              <Link className="nav__link" to="/">HOME</Link>
-              <Link className="nav__link" to="/resume">RESUME</Link>
+              <Link className="nav__link" to="/">
+                HOME
+              </Link>
+              <Link className="nav__link" to="/resume">
+                RESUME
+              </Link>
             </div>
           </div>
         </div>
@@ -58,12 +64,13 @@ class Nav extends Component {
 
 Nav.defaultProps = {
   active: false,
+  sticky: false,
   showNavbar: null,
 };
 
 Nav.propTypes = {
   showNavbar: PropTypes.func,
-  sticky: PropTypes.bool.isRequired,
+  sticky: PropTypes.bool,
   active: PropTypes.bool,
 };
 

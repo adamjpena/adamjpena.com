@@ -99,7 +99,11 @@ class Resume extends Component {
               </div>
               {resumeData.experienceSection.positions.map((item, i) => (
                 <React.Fragment key={`experience-positions-${i}`}>
-                  <a className="resume__link" href={item.url}>
+                  <a
+                    className="resume__link"
+                    href={item.url}
+                    data-testid={`${item.company}-link`}
+                  >
                     <span className="resume__bolder">
                       {item.company.toUpperCase()}
                     </span>

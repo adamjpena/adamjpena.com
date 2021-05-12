@@ -1,10 +1,21 @@
 /* eslint-env jest */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Resume from './Resume';
+import React from "react";
+import { render } from "../../test/test-utils";
+import ReactDOM from "react-dom";
+import Resume from "./Resume";
+import { resumeData } from "../store/resume";
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Resume />, div);
-  ReactDOM.unmountComponentAtNode(div);
+const renderResume = (opts = {}) => {
+  return render(<Resume {...opts} />);
+};
+
+describe("Renders:", () => {
+  it("Experience", () => {
+    const { getByTestId } = renderResume();
+    resumeData.experienceSection.positions.forEach((position) => {
+      const companyLink = getByTestId(`${position.company}-link`);
+      expect(companyLink).toBeInTheDocument();
+      expect(companyLink).toHaveTextContent(position.company.toUpperCase());
+    });
+  });
 });

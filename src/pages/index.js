@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Splash from './Splash';
-import About from './About';
-import Nav from './Nav';
+import React, { Component } from "react";
+import Splash from "../components/Splash";
+import About from "../components/About";
+import Nav from "../components/Nav";
 
-class Home extends Component {
+class Index extends Component {
   constructor(props) {
     super(props);
     this.showNavbar = this.showNavbar.bind(this);
@@ -32,4 +32,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Index;

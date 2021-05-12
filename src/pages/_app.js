@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Resume from "./Resume";
-import ScrollToTop from "./ScrollToTop";
+import Index from ".";
+import Resume from "./resume";
+import ScrollToTop from "../components/ScrollToTop";
 
 const App = () => (
   <BrowserRouter
@@ -11,7 +11,7 @@ const App = () => (
   >
     <Switch>
       <ScrollToTop>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Index} />
         <Route path="/resume" component={Resume} />
       </ScrollToTop>
     </Switch>

@@ -97,8 +97,7 @@ export const resumeData = {
               "Internationalize and localize site while migrating and modernizing stack",
               "Resolve site outages and bugs and field external requests",
             ],
-            techStack:
-              "HTML5/CSS3, React.js, TypeScript, Next.js, JavaScript, Sass, Kubernetes",
+            techStack: "React.js, TypeScript, Next.js, JavaScript, Kubernetes",
           },
         ],
       },
@@ -118,8 +117,7 @@ export const resumeData = {
               "Mentored junior level developers on software development process",
               "Documented bugs and implemented solutions with test coverage",
             ],
-            techStack:
-              "HTML5/CSS3, React.js, Angular, JavaScript, Ruby on Rails, Sass",
+            techStack: "React.js, Angular, JavaScript, Ruby on Rails, Sass",
           },
         ],
       },
@@ -145,8 +143,7 @@ export const resumeData = {
               "Identified A/B test opportunities for site improvements",
               "Investigated and fixed bugs and wrote tests to prevent regression",
             ],
-            techStack:
-              "HTML5/CSS3, React.js, JavaScript, Ruby on Rails, Sass, PHP",
+            techStack: "React.js, JavaScript, Ruby on Rails, Sass, PHP",
           },
         ],
       },

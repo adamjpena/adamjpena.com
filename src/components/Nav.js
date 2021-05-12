@@ -1,77 +1,53 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "../assets/stylesheets/main.scss";
 
-class Nav extends Component {
-  constructor(props) {
-    super(props);
+const Nav = ({ showNavbar, sticky = false, active = false }) => {
+  const node = useRef(null);
 
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll() {
-    const { sticky, showNavbar } = this.props;
-
+  const handleScroll = () => {
     if (!sticky) {
-      const yOffset = this.node.getBoundingClientRect().y;
+      const yOffset = node.current.getBoundingClientRect().y;
       showNavbar(yOffset < 0);
     }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  if (sticky && !active) {
+    return null;
   }
 
-  render() {
-    const { sticky, active } = this.props;
-
-    if (sticky && !active) {
-      return null;
-    }
-
-    return (
-      <div
-        ref={(node) => {
-          this.node = node;
-        }}
-        className={`
+  return (
+    <div
+      ref={node}
+      className={`
           nav
           ${sticky ? "nav--sticky" : ""}
           ${active ? "nav--active" : ""}
         `}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-              <Link className="nav__link" to="/">
-                HOME
-              </Link>
-              <Link className="nav__link" to="/resume">
-                RESUME
-              </Link>
-            </div>
+    >
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            <Link className="nav__link" to="/">
+              HOME
+            </Link>
+            <Link className="nav__link" to="/resume">
+              RESUME
+            </Link>
           </div>
         </div>
       </div>
-    );
-  }
-}
-
-Nav.defaultProps = {
-  active: false,
-  sticky: false,
-  showNavbar: null,
-};
-
-Nav.propTypes = {
-  showNavbar: PropTypes.func,
-  sticky: PropTypes.bool,
-  active: PropTypes.bool,
+    </div>
+  );
 };
 
 export default Nav;

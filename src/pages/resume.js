@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { resumeData } from "../store/resume";
+import Button from "../components/Button";
 
 const ObjectiveContent = () => (
   <>
@@ -35,14 +36,9 @@ const Resume = () => {
           </a>
         </li>
         <li>
-          <button
-            type="button"
-            className="resume__print-button button"
-            name="print"
-            onClick={print}
-          >
+          <Button classes="resume__print-button" name="print" onClick={print}>
             Print
-          </button>
+          </Button>
         </li>
       </ul>
       <div className="resume__page">

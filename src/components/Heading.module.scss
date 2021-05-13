@@ -1,8 +1,11 @@
+@import "../scss/mixins/breakpoints";
+@import "../scss/mixins/colors";
+
 .h1 {
   font-size: 2.5rem;
   font-weight: 400;
 
-  &__accent {
+  strong {
     color: $primary-accent;
     font-weight: 600;
   }
@@ -21,7 +24,7 @@
   font-style: italic;
 }
 
-@media (min-width: $screen-sm-min) {
+@include breakpoint(small) {
   .h1 {
     font-size: 5rem;
   }

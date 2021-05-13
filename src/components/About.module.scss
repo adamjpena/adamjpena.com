@@ -1,0 +1,41 @@
+@import "../scss/mixins/breakpoints";
+@import "../scss/mixins/colors";
+@import "../scss/mixins/fonts";
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  justify-content: space-evenly;
+  padding: 0.5rem 33% 0;
+
+  a {
+    color: $pale;
+    padding: 0.5rem;
+
+    &:hover {
+      color: $rust;
+    }
+  }
+}
+
+.skillBadgeIcon {
+  color: $purple;
+  font-size: 8rem;
+}
+
+.skillBadgeInfo {
+  color: $purple;
+  font-weight: $font-weight-normal;
+  font-size: $font-size-extra-small;
+}
+
+@include breakpoint(medium) {
+  .skillBadgeIcon {
+    font-size: 10rem;
+  }
+
+  .skillBadgeInfo {
+    font-size: $font-size-small;
+  }
+}

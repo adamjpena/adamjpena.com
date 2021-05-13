@@ -1,7 +1,13 @@
 import React, { useRef, useState } from "react";
+import cx from "classnames";
 import PropTypes from "prop-types";
-import { scroller, Element } from "react-scroll";
+import { scroller } from "react-scroll";
+import Section from "./Section";
 import Stars from "./Stars";
+import Button from "./Button";
+import Heading from "./Heading";
+import gridStyles from "../scss/Grid.module.scss";
+import styles from "./Splash.module.scss";
 
 const transitionDuration = 1600;
 
@@ -34,43 +40,44 @@ const Splash = ({ children }) => {
       clearTimeout(blastoffTimer);
     }, transitionDuration);
   };
+
   return (
-    <Element name="splash">
-      <div>
-        <section
-          className="splash max-width-screen"
-          ref={sectionRef}
-          onMouseMove={handleMousemove}
+    <Section
+      name="splash"
+      classes={cx(styles.splash, "max-width-screen", "splash__container")}
+      ref={sectionRef}
+    >
+      <div className={cx(styles.splashContainer, gridStyles.flex, "container")}>
+        <Stars ref={starsRef} onMouseMove={handleMousemove} />
+        <div
+          className={cx(
+            styles.splashContent,
+            gridStyles.flex,
+            gridStyles.noselect,
+            "container"
+          )}
         >
-          <Stars ref={starsRef} />
-          <div className="home__section splash__container flex container">
-            <div className="splash__content flex container noselect">
-              <h1 className="h1 margin-top-0">
-                <div>
-                  Hi&#33; I&#39;m <span className="h1__accent">Adam Peña</span>,
-                </div>
-                <div>full-stack software engineer.</div>
-              </h1>
-              <button
-                type="button"
-                className={`
-                    button
-                    button--inverted
-                    cta
-                    cta--${blastoffActive ? "" : "in"}active
-                    flex
-                  `}
-                onClick={blastoff}
-              >
-                Let&#39;s go
-                <i className="cta__icon fa fa-rocket" />
-              </button>
+          <Heading classes="margin-top-0">
+            <div>
+              Hi&#33; I&#39;m <strong>Adam Peña</strong>,
             </div>
-          </div>
-          {children}
-        </section>
+            <div>full-stack software engineer.</div>
+          </Heading>
+          <Button
+            inverted
+            classes={cx(styles.rocketCta, {
+              [styles.active]: blastoffActive,
+              [styles.inactive]: !blastoffActive,
+            })}
+            onClick={blastoff}
+          >
+            Let&#39;s go
+            <i className={cx(styles.rocketIcon, "fa", "fa-rocket")} />
+          </Button>
+        </div>
       </div>
-    </Element>
+      {children}
+    </Section>
   );
 };
 

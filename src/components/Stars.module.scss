@@ -1,0 +1,12 @@
+.stars {
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 105vw;
+  z-index: 1;
+
+  canvas {
+    animation: reveal 0.6s ease-in;
+  }
+}

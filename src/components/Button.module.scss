@@ -1,3 +1,7 @@
+@import "../scss/mixins/colors";
+@import "../scss/mixins/breakpoints";
+@import "../scss/mixins/fonts";
+
 .button {
   background-color: $white;
   border: 2px solid $white;
@@ -18,7 +22,7 @@
     text-decoration: none;
   }
 
-  &--inverted {
+  &.inverted {
     background-color: transparent;
     color: $white;
 
@@ -30,7 +34,7 @@
     }
   }
 
-  &--as-text {
+  &.asText {
     background-color: transparent;
     border-color: transparent;
     color: $teal;
@@ -41,37 +45,6 @@
       background-color: transparent;
       border-color: transparent;
       color: $rust;
-    }
-  }
-}
-
-.cta {
-  margin-top: 2rem;
-  min-width: 15rem;
-
-  &:focus {
-    outline: 0;
-  }
-
-  &__icon {
-    display: inline-block;
-    padding-left: 1rem;
-    transition: all 0.25s;
-  }
-
-  &--inactive:hover .cta {
-    &__icon {
-      animation: shake 0.82s infinite;
-      transform: rotate(-45deg);
-    }
-  }
-
-  &--active .cta {
-    &__icon {
-      animation: blastoff 1.6s ease-in;
-      animation-fill-mode: forwards;
-      color: $rust;
-      transform: rotate(-45deg);
     }
   }
 }

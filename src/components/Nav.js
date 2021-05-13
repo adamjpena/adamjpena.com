@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { throttle } from "lodash";
 import { Link } from "react-router-dom";
+import cx from "classnames";
+import styles from "./Nav.module.scss";
 
 const Nav = ({ showNavbar, sticky = false, active = false }) => {
   const navRef = useRef(null);
@@ -27,19 +29,17 @@ const Nav = ({ showNavbar, sticky = false, active = false }) => {
   return (
     <div
       ref={navRef}
-      className={`
-          nav
-          ${sticky ? "nav--sticky" : ""}
-          ${active ? "nav--active" : ""}
-        `}
+      className={cx(styles.nav, {
+        [styles.sticky]: sticky,
+      })}
     >
       <div className="container">
         <div className="row">
           <div className="col-xs-12">
-            <Link className="nav__link" to="/">
+            <Link className={styles.navLink} to="/">
               HOME
             </Link>
-            <Link className="nav__link" to="/resume">
+            <Link className={styles.navLink} to="/resume">
               RESUME
             </Link>
           </div>

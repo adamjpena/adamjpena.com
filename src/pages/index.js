@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Splash from "../components/Splash";
 import About from "../components/About";
 import Nav from "../components/Nav";
+import styles from "./index.module.scss";
 
 const Index = () => {
   const [shouldShowNavBar, toggleShowNavBar] = useState(false);
@@ -11,7 +12,7 @@ const Index = () => {
   };
 
   return (
-    <div className="home">
+    <div className={styles.index}>
       <Nav sticky active={shouldShowNavBar} />
       <Splash>
         <Nav {...{ showNavbar }} />

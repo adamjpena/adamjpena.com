@@ -1,3 +1,7 @@
+@import "../../scss/mixins/fonts";
+@import "../../scss/mixins/breakpoints";
+@import "../../scss/mixins/colors";
+
 body {
   margin: 0;
   padding: 0;
@@ -13,7 +17,7 @@ a {
   transition: color ease 0.2s;
 }
 
-@media (min-width: $screen-md-min) {
+@mixin breakpoint($min-width-breakpoint) {
   body {
     font-size: $font-size-medium;
   }

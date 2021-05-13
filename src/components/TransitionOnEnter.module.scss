@@ -1,18 +1,20 @@
+@import "../scss/keyframes";
+
 .transition {
   animation-fill-mode: forwards;
   opacity: 0;
 
-  &--reveal {
+  &.reveal {
     animation: reveal 0.6s ease-in;
     opacity: 1;
   }
 
-  &--grow {
+  &.grow {
     animation: grow 0.6s ease-out;
     opacity: 1;
   }
 
-  &--slide-from-right {
+  &.slide-from-right {
     // makes page jump on mobile
     // animation: slide-from-right 0.6s ease-out;
     animation: reveal 0.6s ease-out;
@@ -20,7 +22,7 @@
   }
 }
 
-.animate-hidden {
-  animation: hide 0.6s ease-out;
-  animation-fill-mode: forwards;
-}
+// .animateHidden {
+//   animation: hide 0.6s ease-out;
+//   animation-fill-mode: forwards;
+// }

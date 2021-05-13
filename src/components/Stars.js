@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { forwardRef, useEffect } from "react";
+import styles from "./Stars.module.scss";
 
-const Stars = React.forwardRef(({}, ref) => {
+const Stars = forwardRef(({ onMouseMove }, ref) => {
   useEffect(() => {
     const stars = document.createElement("script");
     stars.type = "text/javascript";
@@ -125,7 +126,14 @@ const Stars = React.forwardRef(({}, ref) => {
     };
   });
 
-  return <div id="stars" {...{ ref }} className="splash__stars" />;
+  return (
+    <div
+      id="stars"
+      className={styles.stars}
+      {...{ ref }}
+      {...{ onMouseMove }}
+    />
+  );
 });
 
 export default Stars;

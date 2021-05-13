@@ -1,0 +1,36 @@
+@import "../scss/mixins/colors";
+@import "../scss/mixins/breakpoints";
+$nav-height: 5.3rem;
+
+.nav {
+  height: $nav-height;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+
+  &.sticky {
+    background-color: $black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+  }
+}
+
+.navLink {
+  color: $white;
+  display: inline-block;
+  line-height: $nav-height;
+  padding: 0 2rem;
+
+  &:hover {
+    color: $rust;
+    text-decoration: none;
+  }
+}
+
+@include breakpoint(medium) {
+  .nav {
+    text-align: left;
+  }
+}

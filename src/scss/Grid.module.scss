@@ -1,4 +1,4 @@
-@import "../../scss/mixins/breakpoints";
+@import "./mixins/breakpoints";
 
 img {
   display: block;
@@ -13,32 +13,32 @@ img {
   align-items: center;
 }
 
-.max-width-screen {
+.maxWidthScreen {
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-.hidden-lte-sm {
+.hiddenLteSm {
   display: none;
 }
 
-.margin-bottom-fourth {
+.marginBottomFourth {
   margin-bottom: 0.25rem;
 }
 
-.margin-bottom {
+.marginBottom {
   margin-bottom: 1rem;
 }
 
-.margin-bottom-extra {
+.marginBottomExtra {
   margin-bottom: 1.5rem;
 }
 
-.margin-bottom-2x {
+.marginBottom2x {
   margin-bottom: 2rem;
 }
 
-.margin-top-0 {
+.marginTop0 {
   margin-top: 0;
 }
 
@@ -48,21 +48,21 @@ img {
 }
 
 @include breakpoint(medium) {
-  .hidden-lte-sm {
+  .hiddenLteSm {
     display: block;
   }
 
-  .visible-lte-sm {
+  .visibleLteSm {
     display: none;
   }
 }
 
 @media print {
-  .hide-print {
+  .hidePrint {
     display: none;
   }
 
-  .show-print {
+  .showPrint {
     display: block !important;
   }
 }

@@ -1,3 +1,5 @@
+@import "../../scss/mixins/breakpoints";
+
 $resume-width: 820px;
 
 .resume {
@@ -139,7 +141,7 @@ $resume-width: 820px;
   }
 }
 
-@media (min-width: $screen-sm-min) {
+@include breakpoint(small) {
   .resume {
     &__column {
       padding-top: 2rem;

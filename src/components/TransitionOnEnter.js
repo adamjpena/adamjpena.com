@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import cx from "classnames";
-import PropTypes from "prop-types";
 import { Waypoint } from "react-waypoint";
+import styles from "./TransitionOnEnter.module.scss";
+
+export const TRANSITIONS = {
+  REVEAL: "reveal",
+  GROW: "grow",
+  SLIDEFROMRIGHT: "slide-from-right",
+};
 
 const TransitionOnEnter = ({ children, transition }) => {
   const [isEntered, setIsIntered] = useState(false);
@@ -13,8 +19,8 @@ const TransitionOnEnter = ({ children, transition }) => {
   return (
     <Waypoint onEnter={handleEnter}>
       <div
-        className={cx(transition, {
-          [`transition--${transition}`]: isEntered,
+        className={cx(styles.transition, {
+          [styles[transition]]: isEntered,
         })}
       >
         {children}

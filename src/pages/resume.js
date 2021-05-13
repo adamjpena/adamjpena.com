@@ -36,9 +36,9 @@ const Resume = () => {
     <div className={cx(styles.resume, gridStyles.flex)}>
       <ul className={cx(styles.breadcrumbs, gridStyles.hidePrint)}>
         <li>
-          <a className={cx("button button--as-text")} href="/">
+          <Button asText asAnchor href="/">
             <i className={cx("fa fa-angle-left")} /> {resumeData.home}
-          </a>
+          </Button>
         </li>
         <li>
           <Button classes={styles.printButton} name="print" onClick={print}>

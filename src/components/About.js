@@ -2,10 +2,10 @@ import React from "react";
 import { Element } from "react-scroll";
 import TransitionOnEnter from "./TransitionOnEnter";
 
-import portraitVertical from "../assets/images/adam-city-vertical.jpg";
-import portraitVertical2x from "../assets/images/adam-city-vertical@2x.jpg";
-import portrait from "../assets/images/adam-city.jpg";
-import portrait2x from "../assets/images/adam-city@2x.jpg";
+import portraitVertical from "../assets/images/adam-portrait-vertical.jpg";
+import portraitVertical2x from "../assets/images/adam-portrait-vertical@2x.jpg";
+import portrait from "../assets/images/adam-portrait.jpg";
+import portrait2x from "../assets/images/adam-portrait@2x.jpg";
 
 const About = () => (
   <Element name="about">

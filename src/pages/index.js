@@ -14,7 +14,7 @@ const Index = () => {
     <div className="home">
       <Nav sticky active={shouldShowNavBar} />
       <Splash>
-        <Nav sticky={false} {...{ showNavbar }} />
+        <Nav {...{ showNavbar }} />
       </Splash>
       <About />
     </div>

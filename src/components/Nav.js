@@ -1,17 +1,16 @@
 import React, { useEffect, useRef } from "react";
+import { throttle } from "lodash";
 import { Link } from "react-router-dom";
 
-import "../assets/stylesheets/main.scss";
-
 const Nav = ({ showNavbar, sticky = false, active = false }) => {
-  const node = useRef(null);
+  const navRef = useRef(null);
 
-  const handleScroll = () => {
+  const handleScroll = throttle(() => {
     if (!sticky) {
-      const yOffset = node.current.getBoundingClientRect().y;
+      const yOffset = navRef.current.getBoundingClientRect().y;
       showNavbar(yOffset < 0);
     }
-  };
+  }, 100);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +26,7 @@ const Nav = ({ showNavbar, sticky = false, active = false }) => {
 
   return (
     <div
-      ref={node}
+      ref={navRef}
       className={`
           nav
           ${sticky ? "nav--sticky" : ""}

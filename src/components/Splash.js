@@ -6,7 +6,7 @@ import Section from "./Section";
 import Stars from "./Stars";
 import Button from "./Button";
 import Heading from "./Heading";
-import gridStyles from "../scss/Grid.module.scss";
+import gridStyles from "../scss/grid.module.scss";
 import styles from "./Splash.module.scss";
 
 const transitionDuration = 1600;
@@ -32,7 +32,7 @@ const Splash = ({ children }) => {
       delay: 300,
       isDynamic: true,
       smooth: "easeInOutCubic",
-      offset: -52,
+      offset: -53,
     });
 
     const blastoffTimer = setTimeout(() => {
@@ -42,11 +42,7 @@ const Splash = ({ children }) => {
   };
 
   return (
-    <Section
-      name="splash"
-      classes={cx(styles.splash, "max-width-screen", "splash__container")}
-      ref={sectionRef}
-    >
+    <Section name="splash" classes={cx(styles.splash)} ref={sectionRef}>
       <div className={cx(styles.splashContainer, gridStyles.flex, "container")}>
         <Stars ref={starsRef} onMouseMove={handleMousemove} />
         <div
@@ -57,7 +53,7 @@ const Splash = ({ children }) => {
             "container"
           )}
         >
-          <Heading classes="margin-top-0">
+          <Heading classes={gridStyles.marginTop0}>
             <div>
               Hi&#33; I&#39;m <strong>Adam Peña</strong>,
             </div>

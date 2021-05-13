@@ -6,7 +6,7 @@ import "font-awesome/css/font-awesome.min.css";
 import App from "./pages/_app";
 import * as serviceWorker from "./serviceWorker";
 
-import "./assets/stylesheets/main.scss";
+import "./scss/main.scss";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

@@ -1,4 +1,6 @@
-@import "../../scss/mixins/breakpoints";
+@import "../scss/mixins/breakpoints";
+@import "../scss/mixins/colors";
+@import "../scss/mixins/fonts";
 
 $resume-width: 820px;
 
@@ -10,7 +12,7 @@ $resume-width: 820px;
   line-height: 1.25;
   min-height: 100vh;
 
-  &__breadcrumbs {
+  .breadcrumbs {
     float: left;
     font-size: 1.8rem;
     list-style: none;
@@ -30,19 +32,19 @@ $resume-width: 820px;
     }
   }
 
-  &__print-button {
+  .printButton {
     display: none;
   }
 
-  &__bolder {
+  .bolder {
     font-weight: $font-weight-bolder;
   }
 
-  &__normal {
+  .normal {
     font-weight: $font-weight-normal;
   }
 
-  &__link {
+  .link {
     color: $black;
 
     &:hover,
@@ -54,52 +56,52 @@ $resume-width: 820px;
     }
   }
 
-  &__page {
+  .page {
     background-color: #fff;
     max-width: 100%;
     padding-bottom: 3.5rem;
     width: $resume-width;
   }
 
-  &__header {
+  .header {
     padding: 3rem 1.5rem;
     text-align: center;
   }
 
-  &__title {
+  .title {
     font-size: 3.8rem;
   }
 
-  &__subtitle {
+  .subtitle {
     font-size: 1.8rem;
     font-weight: $font-weight-normal;
   }
 
-  &__hr {
+  .hr {
     border-top-color: $black;
     border-top-width: 2px;
     margin: 0;
   }
 
-  &__heading-1 {
+  .heading1 {
     font-size: 1.9rem;
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 0.3rem;
   }
 
-  &__heading-2 {
+  .heading2 {
     font-weight: 700;
     line-height: 1.4;
   }
 
-  &__heading-3 {
+  .heading3 {
     font-weight: 400;
     line-height: 1.35;
     margin-bottom: 1rem;
   }
 
-  &__ul {
+  .ul {
     margin-bottom: 1rem;
     padding-left: 1.6rem;
 
@@ -109,11 +111,11 @@ $resume-width: 820px;
     }
   }
 
-  &__stack {
+  .stack {
     list-style-type: none;
   }
 
-  &__column {
+  .column {
     display: inline-block;
     float: left;
     padding: 0 2rem;
@@ -126,16 +128,16 @@ $resume-width: 820px;
 
 @media (min-width: $resume-width + 1) {
   .resume {
-    &__breadcrumbs {
+    .breadcrumbs {
       margin: 2rem 0;
       padding: 0;
     }
 
-    &__print-button {
+    .printButton {
       display: inline-block;
     }
 
-    &__page {
+    .page {
       box-shadow: 2px 2px 1px lighten($black, 30%);
     }
   }
@@ -143,17 +145,17 @@ $resume-width: 820px;
 
 @include breakpoint(small) {
   .resume {
-    &__column {
+    .column {
       padding-top: 2rem;
 
-      &--left {
+      &.left {
         float: left;
         padding-left: 4.5rem;
         padding-right: 1.5rem;
         width: 33%;
       }
 
-      &--right {
+      &.right {
         float: right;
         padding-left: 3rem;
         padding-right: 4.5rem;
@@ -169,24 +171,24 @@ $resume-width: 820px;
     margin-right: -2rem;
     padding-top: 0;
 
-    &__page {
+    .page {
       max-width: 100%;
       padding-bottom: 0;
       width: 100%;
     }
 
-    &__header {
+    .header {
       padding-top: 0;
     }
 
-    &__column {
+    .column {
       padding-top: 2rem;
 
-      &--left {
+      &.left {
         width: 31%;
       }
 
-      &--right {
+      &.right {
         width: 69%;
       }
     }

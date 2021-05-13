@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cx from "classnames";
 import { Waypoint } from "react-waypoint";
-import styles from "./TransitionOnEnter.module.scss";
+import styles from "../scss/transition.module.scss";
 
 export const TRANSITIONS = {
   REVEAL: "reveal",

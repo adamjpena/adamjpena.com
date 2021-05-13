@@ -1,7 +1,9 @@
 import React from "react";
 import cx from "classnames";
 import TransitionOnEnter from "./TransitionOnEnter";
-import gridStyles from "../scss/Grid.module.scss";
+import Image from "./Image";
+
+import gridStyles from "../scss/grid.module.scss";
 import styles from "./About.module.scss";
 
 import Heading from "./Heading";
@@ -16,20 +18,25 @@ const About = () => (
   <Section name="about">
     <div className="container">
       <div className="row">
-        <div className="col-sm-6 col-sm-push-3 col-xs-8 col-xs-push-2 col-md-4 col-md-push-0 margin-bottom-2x">
+        <div
+          className={cx(
+            "col-sm-6 col-sm-push-3 col-xs-8 col-xs-push-2 col-md-4 col-md-push-0",
+            gridStyles.marginBottom2x
+          )}
+        >
           <TransitionOnEnter transition="reveal">
             <div>
-              <img
+              <Image
                 src={portrait}
                 srcSet={`${portrait} 481w, ${portrait2x} 962w`}
                 alt="Adam J Pena"
-                className={gridStyles.visibleLteSm}
+                classes={gridStyles.visibleLteSm}
               />
-              <img
+              <Image
                 src={portraitVertical}
                 srcSet={`${portraitVertical} 360w, ${portraitVertical2x} 720w`}
                 alt="Adam J Pena"
-                className={gridStyles.hiddenLteSm}
+                classes={gridStyles.hiddenLteSm}
               />
               <div className={cx(styles.socialLinks, gridStyles.flex)}>
                 <a
@@ -52,11 +59,11 @@ const About = () => (
         </div>
         <div className="col-xs-12 col-md-8">
           <TransitionOnEnter transition="grow">
-            <Heading n={2} classes="margin-top-0">
+            <Heading n={2} classes={gridStyles.marginTop0}>
               About Me
             </Heading>
             <Heading n={4}>Creating beautiful, minimal interfaces</Heading>
-            <p className="margin-bottom-2x">
+            <p className={gridStyles.marginBottom2x}>
               I take pleasure in streamlining a process to increase productivity
               and ensure a quality output. In design, this translates to
               designing intuitive interfaces to make things as easy as drawing

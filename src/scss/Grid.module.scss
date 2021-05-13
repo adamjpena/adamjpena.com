@@ -1,11 +1,5 @@
 @import "./mixins/breakpoints";
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .flex {
   display: flex;
   flex-direction: column;
@@ -13,13 +7,8 @@ img {
   align-items: center;
 }
 
-.maxWidthScreen {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
 .hiddenLteSm {
-  display: none;
+  display: none !important;
 }
 
 .marginBottomFourth {
@@ -49,17 +38,17 @@ img {
 
 @include breakpoint(medium) {
   .hiddenLteSm {
-    display: block;
+    display: block !important;
   }
 
   .visibleLteSm {
-    display: none;
+    display: none !important;
   }
 }
 
 @media print {
   .hidePrint {
-    display: none;
+    display: none !important;
   }
 
   .showPrint {

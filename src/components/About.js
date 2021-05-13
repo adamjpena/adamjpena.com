@@ -59,10 +59,10 @@ const About = () => (
         </div>
         <div className="col-xs-12 col-md-8">
           <TransitionOnEnter transition="grow">
-            <Heading n={2} classes={gridStyles.marginTop0}>
+            <Heading level={2} classes={gridStyles.marginTop0}>
               About Me
             </Heading>
-            <Heading n={4}>Creating beautiful, minimal interfaces</Heading>
+            <Heading level={4}>Creating beautiful, minimal interfaces</Heading>
             <p className={gridStyles.marginBottom2x}>
               I take pleasure in streamlining a process to increase productivity
               and ensure a quality output. In design, this translates to

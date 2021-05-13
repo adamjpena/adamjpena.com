@@ -1,10 +1,15 @@
-.stars {
+.starsContainer {
   height: 100vh;
   left: 0;
   position: absolute;
   top: 0;
   width: 105vw;
   z-index: 1;
+}
+
+.stars {
+  height: 100%;
+  width: 100%;
 
   canvas {
     animation: reveal 0.6s ease-in;

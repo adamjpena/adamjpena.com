@@ -12,7 +12,6 @@ const Index: FC = () => {
   const showNavbar = (shouldShowNavBar) => {
     setIsActive(shouldShowNavBar);
   };
-  console.log(process.env.NODE_ENV);
   const [shouldShowEmailCta, setShouldShowEmailCta] = useState(false);
 
   return (

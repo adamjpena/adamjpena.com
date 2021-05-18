@@ -7,7 +7,6 @@ import { Grid, Cell, GRID_CONSTANTS } from 'components/Grid';
 import styles from './BlogOverviewTemplate.module.scss';
 
 const BlogOverviewTemplate = ({ posts, postsCount, pageCount }) => {
-  console.log(posts);
   return (
     <DefaultTemplate pageTitle='Blog' metaDescription='adamjpena.com blog'>
       <div className={styles.blogOverviewTemplate}>

@@ -17,8 +17,6 @@ const PostCard = ({
     md: isHighlight ? 1 : 2,
   };
 
-  console.log(description);
-
   return (
     <div
       className={cx(styles.postCard, {
@@ -27,13 +25,15 @@ const PostCard = ({
     >
       <Grid margin={0} gap={GRID_CONSTANTS.gapMedium} columns={2}>
         <Cell width={cellWidths}>
-          <Link className={styles.imgContainer} to={slug}>
-            <GatsbyImage
-              className={styles.img}
-              alt={heroImage.name}
-              fluid={heroImage.fluid}
-            />
-          </Link>
+          <div className={styles.imgContainer}>
+            <Link className={styles.imgLink} to={slug}>
+              <GatsbyImage
+                classes={styles.img}
+                alt={heroImage.name}
+                fluid={heroImage.fluid}
+              />
+            </Link>
+          </div>
         </Cell>
         <Cell width={cellWidths}>
           <Link to={slug}>

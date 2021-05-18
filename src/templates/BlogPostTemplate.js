@@ -11,7 +11,6 @@ import styles from './BlogPostTemplate.module.scss';
 
 const BlogPostTemplate = (props) => {
   const post = get(props, 'data.contentfulBlogPost');
-  console.log(post);
 
   return (
     <DefaultTemplate pageTitle={post.title} metaDescription={post.description}>
@@ -64,8 +63,8 @@ export const pageQuery = graphql`
       }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid
+        fluid(maxWidth: 988, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
       body {

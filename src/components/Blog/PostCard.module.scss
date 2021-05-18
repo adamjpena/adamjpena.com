@@ -2,12 +2,15 @@
 @import 'scss/mixins/colors';
 
 .imgContainer {
+  position: relative;
+}
+
+.imgLink {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -19,15 +22,22 @@
 
     @include breakpoint(md) {
       max-height: inherit;
-      .imgContainer {
-        overflow: visible;
-        position: relative;
+      .imgLink {
+        display: block;
       }
+      // GatsbyImage overrides
       .img {
-        height: auto;
-        position: absolute;
-        top: 0;
-        width: 100%;
+        overflow: visible !important;
+        div {
+          padding-bottom: 0 !important;
+        }
+
+        img {
+          height: auto !important;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
       }
     }
   }

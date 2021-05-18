@@ -37,6 +37,12 @@
   user-select: none;
 }
 
+@include breakpoint(sm) {
+  .hiddenXs {
+    display: block !important;
+  }
+}
+
 @include breakpoint(md) {
   .hiddenMd {
     display: none !important;

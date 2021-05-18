@@ -2,7 +2,7 @@
 @import 'scss/mixins/breakpoints';
 
 .blogOverviewTemplate {
-  padding: 0 $gutter-width;
+  padding: 0 $gutter-width $gutter-width;
 
   @include breakpoint(md) {
     padding: 0 0 $gutter-width * 2 0;

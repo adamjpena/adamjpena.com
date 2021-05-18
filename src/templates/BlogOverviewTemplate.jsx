@@ -17,7 +17,7 @@ const BlogOverviewTemplate = ({ posts, postsCount, pageCount }) => {
         >
           <Cell width={1}>
             <Heading stronger classes={styles.heading}>
-              Adam Peña&#39;s Blog
+              Adam J Peña&#39;s Blog
             </Heading>
           </Cell>
         </Grid>

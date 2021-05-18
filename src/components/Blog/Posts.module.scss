@@ -1,0 +1,12 @@
+@import 'scss/mixins/colors';
+@import 'scss/mixins/breakpoints';
+
+.postCardCell {
+  border-bottom: solid 1px $black;
+
+  &Highlight {
+    @include breakpoint(sm) {
+      border-bottom: none;
+    }
+  }
+}

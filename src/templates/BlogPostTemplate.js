@@ -29,10 +29,10 @@ const BlogPostTemplate = (props) => {
                   By <Link to='/'>Adam J Peña</Link>
                 </p>
               </Cell>
-              <Cell width={{ xs: 2, md: 1 }}>
+              <Cell width={{ xs: 2, md: 1 }} margin={{ xs: '-35px', md: 0 }}>
                 <GatsbyImage
                   className={styles.img}
-                  alt={post.heroImage.name}
+                  alt={post.heroImage.description}
                   fluid={post.heroImage.fluid}
                 />
               </Cell>
@@ -63,6 +63,7 @@ export const pageQuery = graphql`
       }
       publishDate(formatString: "MMMM Do, YYYY")
       heroImage {
+        description
         fluid(maxWidth: 988, background: "rgb:000000") {
           ...GatsbyContentfulFluid_tracedSVG
         }

@@ -23,7 +23,7 @@ export const Grid = styled(({ columns, margin, gap, columnGap, ...rest }) => (
     `}
   ${({ margin = false }) =>
     map(margin, (value) => {
-      if (!value) {
+      if (value === false) {
         return '';
       }
 
@@ -62,6 +62,17 @@ export const Cell = styled(({ width, push, padding, ...rest }) => (
       padding-left: ${padding}px;
       padding-right: ${padding}px;
     `}
+  ${({ margin = false }) =>
+    map(margin, (value) => {
+      if (value === false) {
+        return '';
+      }
+
+      return css`
+        margin-left: ${value};
+        margin-right: ${value};
+      `;
+    })}
   ${({ width = 1 }) =>
     map(
       width,

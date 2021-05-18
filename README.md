@@ -2,7 +2,7 @@
 
 Create a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
 
-![The index page of the starter blog](https://rawgit.com/contentful/starter-gatsby-blog/master/screenshot.jpg "The index page of the starter blog")
+![The index page of the starter blog](https://rawgit.com/contentful/starter-gatsby-blog/master/screenshot.jpg 'The index page of the starter blog')
 
 Static sites are scalable, secure and have very little required maintenance. They come with a drawback though. Not everybody feels good editing files, building a project and uploading it somewhere. This is where Contentful comes into play.
 
@@ -33,23 +33,23 @@ $ gatsby new contentful-starter-blog https://github.com/contentful/starter-gatsb
 
 ### Set up of the needed content model and create a configuration file
 
-This project comes with a Contentful setup command `npm run setup`.
+This project comes with a Contentful setup command `yarn setup`.
 
 This command will ask you for a space ID, and access tokens for the Contentful Management and Delivery API and then import the needed content model into the space you define and write a config file (`./.contentful.json`).
 
-`npm run setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
+`yarn setup` automates that for you but if you want to do it yourself rename `.contentful.json.sample` to `.contentful.json` and add your configuration in this file.
 
 ## Crucial Commands
 
-### `npm run dev`
+### `yarn start`
 
 Run the project locally with live reload in development mode.
 
-### `npm run build`
+### `yarn build`
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
 
-### `npm run serve`
+### `yarn serve`
 
 Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
 

@@ -1,4 +1,4 @@
-@import "./mixins/breakpoints";
+@import './mixins/breakpoints';
 
 .flex {
   display: flex;
@@ -7,7 +7,8 @@
   align-items: center;
 }
 
-.hiddenLteSm {
+.hiddenLteMd,
+.hiddenXs {
   display: none !important;
 }
 
@@ -36,13 +37,29 @@
   user-select: none;
 }
 
-@include breakpoint(medium) {
-  .hiddenLteSm {
-    display: block !important;
+@include breakpoint(md) {
+  .hiddenMd {
+    display: none !important;
   }
 
-  .visibleLteSm {
+  .showMd {
+    display: block !important;
+  }
+}
+
+@include breakpoint(md) {
+  .hiddenMd {
     display: none !important;
+  }
+}
+
+@include breakpoint(lg) {
+  .visibleLteMd {
+    display: none !important;
+  }
+
+  .hiddenLteMd {
+    display: block !important;
   }
 }
 

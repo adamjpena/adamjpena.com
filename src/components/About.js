@@ -1,64 +1,64 @@
-import React from "react";
-import cx from "classnames";
-import TransitionOnEnter from "./TransitionOnEnter";
-import Image from "./Image";
+import React from 'react';
+import cx from 'classnames';
+import TransitionOnEnter, { TRANSITIONS } from './TransitionOnEnter';
+import Image from './Layout/Image';
+import Link from './helpers/Link';
+import { Container, Grid, Cell } from 'components/Grid';
 
-import gridStyles from "../scss/grid.module.scss";
-import styles from "./About.module.scss";
+import gridStyles from 'scss/grid.module.scss';
+import styles from './About.module.scss';
 
-import Heading from "./Heading";
-import Section from "./Section";
+import { Heading, Section } from './Layout';
 
-import portraitVertical from "../assets/images/adam-portrait-vertical.jpg";
-import portraitVertical2x from "../assets/images/adam-portrait-vertical@2x.jpg";
-import portrait from "../assets/images/adam-portrait.jpg";
-import portrait2x from "../assets/images/adam-portrait@2x.jpg";
+import portraitVertical from 'assets/images/adam-portrait-vertical.jpg';
+import portraitVertical2x from 'assets/images/adam-portrait-vertical@2x.jpg';
+import portrait from 'assets/images/adam-portrait.jpg';
+import portrait2x from 'assets/images/adam-portrait@2x.jpg';
 
 const About = () => (
-  <Section name="about">
-    <div className="container">
-      <div className="row">
-        <div
-          className={cx(
-            "col-sm-6 col-sm-push-3 col-xs-8 col-xs-push-2 col-md-4 col-md-push-0",
-            gridStyles.marginBottom2x
-          )}
+  <Section name='about'>
+    <Container>
+      <Grid margin={-15} columns={12}>
+        <Cell
+          padding={15}
+          width={{ xs: 8, md: 6, lg: 4 }}
+          push={{ xs: 2, md: 3, lg: 'auto' }}
         >
-          <TransitionOnEnter transition="reveal">
+          <TransitionOnEnter transition={TRANSITIONS.REVEAL}>
             <div>
               <Image
                 src={portrait}
                 srcSet={`${portrait} 481w, ${portrait2x} 962w`}
-                alt="Adam J Pena"
-                classes={gridStyles.visibleLteSm}
+                alt='Adam J Peña'
+                classes={gridStyles.visibleLteMd}
               />
               <Image
                 src={portraitVertical}
                 srcSet={`${portraitVertical} 360w, ${portraitVertical2x} 720w`}
-                alt="Adam J Pena"
-                classes={gridStyles.hiddenLteSm}
+                alt='Adam J Peña'
+                classes={gridStyles.hiddenLteMd}
               />
               <div className={cx(styles.socialLinks, gridStyles.flex)}>
-                <a
-                  href="https://www.linkedin.com/in/adamjpena"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <Link
+                  href='https://www.linkedin.com/in/adamjpena'
+                  rel='noopener noreferrer'
+                  target='_blank'
                 >
-                  <i className="fa fa-linkedin" />
-                </a>
-                <a
-                  href="https://www.github.com/adamjpena"
-                  rel="noopener noreferrer"
-                  target="_blank"
+                  <i className='fa fa-linkedin' />
+                </Link>
+                <Link
+                  href='https://www.github.com/adamjpena'
+                  rel='noopener noreferrer'
+                  target='_blank'
                 >
-                  <i className="fa fa-github" />
-                </a>
+                  <i className='fa fa-github' />
+                </Link>
               </div>
             </div>
           </TransitionOnEnter>
-        </div>
-        <div className="col-xs-12 col-md-8">
-          <TransitionOnEnter transition="grow">
+        </Cell>
+        <Cell padding={15} width={{ xs: 12, lg: 8 }}>
+          <TransitionOnEnter transition={TRANSITIONS.GROW}>
             <Heading level={2} classes={gridStyles.marginTop0}>
               About Me
             </Heading>
@@ -72,46 +72,41 @@ const About = () => (
               at the gym.
             </p>
           </TransitionOnEnter>
-          <TransitionOnEnter transition="slide-from-right">
-            <div className="row">
-              <div className={cx(styles.skillBadge, "col-xs-6", "col-sm-4")}>
+          <TransitionOnEnter transition={TRANSITIONS.SLIDE_LEFT}>
+            <Grid margin={-15} columns={12}>
+              <Cell padding={15} width={{ xs: 6, md: 4 }}>
                 <div className={styles.skillBadgeIcon}>
-                  <i className="fa fa-user" />
+                  <i className='fa fa-user' />
                 </div>
                 <div className={styles.skillBadgeInfo}>
                   Building intuitive interactions
                 </div>
-              </div>
-              <div className={cx(styles.skillBadge, "col-xs-6", "col-sm-4")}>
+              </Cell>
+              <Cell padding={15} width={{ xs: 6, md: 4 }}>
                 <div className={styles.skillBadgeIcon}>
-                  <i className="fa fa-sitemap" />
+                  <i className='fa fa-sitemap' />
                 </div>
                 <div className={styles.skillBadgeInfo}>
                   Increasing user conversion
                 </div>
-              </div>
-              <div className="clearfix hidden-sm hidden-md hidden-lg" />
-              <div
-                className={cx(
-                  styles.skillBadge,
-                  "col-xs-6",
-                  "col-sm-4",
-                  "col-xs-push-3",
-                  "col-sm-push-0"
-                )}
+              </Cell>
+              <Cell
+                padding={15}
+                width={{ xs: 6, md: 4 }}
+                push={{ xs: 3, md: 'auto' }}
               >
                 <div className={styles.skillBadgeIcon}>
-                  <i className="fa fa-mobile" />
+                  <i className='fa fa-mobile' />
                 </div>
                 <div className={styles.skillBadgeInfo}>
                   Developing responsive experiences
                 </div>
-              </div>
-            </div>
+              </Cell>
+            </Grid>
           </TransitionOnEnter>
-        </div>
-      </div>
-    </div>
+        </Cell>
+      </Grid>
+    </Container>
   </Section>
 );
 

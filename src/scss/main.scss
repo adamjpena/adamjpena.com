@@ -1,6 +1,16 @@
-@import "./mixins/fonts";
-@import "./mixins/breakpoints";
-@import "./mixins/colors";
+@import './mixins/fonts';
+@import './mixins/breakpoints';
+@import './mixins/colors';
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+}
 
 body {
   margin: 0;
@@ -8,13 +18,21 @@ body {
   font-family: $font-family;
   font-size: $font-size-small;
   font-weight: $font-weight-light;
+  line-height: 1.42857143;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: $teal;
+  text-decoration: none;
   transition: color ease 0.2s;
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 @mixin breakpoint($min-width-breakpoint) {

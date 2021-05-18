@@ -1,0 +1,54 @@
+@import 'scss/mixins/breakpoints';
+@import 'scss/mixins/colors';
+
+.h1,
+.h2,
+.h4 {
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.h1 {
+  font-size: 3.2rem;
+  font-weight: 400;
+
+  strong {
+    color: $primary-accent;
+    font-weight: 600;
+  }
+}
+
+.h2 {
+  color: $rust;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.h4 {
+  color: $pale;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.stronger {
+  font-weight: 700;
+}
+
+@include breakpoint(sm) {
+  .h1 {
+    font-size: 5rem;
+  }
+
+  .h2 {
+    font-size: 4rem;
+  }
+
+  .h4 {
+    font-size: 1.8rem;
+  }
+}

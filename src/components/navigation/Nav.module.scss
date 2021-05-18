@@ -1,0 +1,112 @@
+@import 'scss/keyframes';
+@import 'scss/mixins/colors';
+@import 'scss/mixins/breakpoints';
+@import 'scss/variables/grid';
+
+$nav-link-padding: 1.6rem;
+
+.nav {
+  color: $black;
+  height: $nav-height;
+  position: relative;
+  text-align: center;
+  transition: transform ease 0.6s;
+  width: 100%;
+  z-index: 2;
+
+  &:not(.dark) .body {
+    background-color: $white;
+
+    @include breakpoint(md) {
+      background-color: transparent;
+    }
+  }
+
+  .body {
+    padding: 0 $nav-link-padding * 2;
+
+    @include breakpoint(lg) {
+      border-radius: $nav-height / 2;
+      margin: 0 $nav-link-padding * 2;
+    }
+  }
+
+  @include breakpoint(lg) {
+    margin-top: $nav-margin-top;
+  }
+
+  &.hidden {
+    visibility: hidden;
+    transform: translateY(-110%);
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    visibility: visible;
+    width: 100%;
+    z-index: 3;
+
+    .body {
+      background-color: $white;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 32px 0px;
+    }
+  }
+
+  &.dark {
+    color: $white;
+  }
+
+  &.sticky.active {
+    transform: translateY(0);
+  }
+
+  .navItem {
+    display: flex;
+    flex-direction: column;
+    height: $nav-height;
+    justify-content: center;
+    padding: 0 $nav-link-padding;
+
+    &End {
+      margin-left: auto;
+    }
+  }
+
+  .navLogoLink {
+    padding-left: 0;
+    padding-right: $nav-link-padding;
+
+    img {
+      transition: opacity ease 0.2s;
+      width: 4rem;
+    }
+
+    a:hover img {
+      opacity: 0.8;
+    }
+  }
+
+  .navLinks {
+    display: flex;
+  }
+
+  .navLink {
+    color: inherit;
+    display: inline-block;
+    font-weight: 600;
+    line-height: $nav-height;
+    padding: 0 $nav-link-padding;
+
+    &:hover {
+      color: $rust;
+      text-decoration: none;
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  .nav {
+    text-align: left;
+  }
+}

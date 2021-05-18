@@ -1,0 +1,12 @@
+@import 'scss/mixins/breakpoints';
+
+.section {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+}
+
+@include breakpoint(lg) {
+  .section {
+    height: 100vh;
+  }
+}

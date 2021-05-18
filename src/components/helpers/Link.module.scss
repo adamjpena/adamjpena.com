@@ -1,0 +1,7 @@
+@import 'scss/mixins/colors';
+
+.link {
+  color: $teal;
+  cursor: pointer;
+  transition: color ease 0.2s;
+}

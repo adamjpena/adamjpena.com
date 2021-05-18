@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import cx from "classnames";
-import { Waypoint } from "react-waypoint";
-import styles from "../scss/transition.module.scss";
+import React, { useState } from 'react';
+import cx from 'classnames';
+import { Waypoint } from 'react-waypoint';
+import styles from 'scss/transition.module.scss';
 
 export const TRANSITIONS = {
-  REVEAL: "reveal",
-  GROW: "grow",
-  SLIDEFROMRIGHT: "slide-from-right",
+  REVEAL: 'reveal',
+  GROW: 'grow',
+  SLIDE_LEFT: 'slideLeft',
 };
 
 const TransitionOnEnter = ({ children, transition }) => {

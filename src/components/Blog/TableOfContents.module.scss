@@ -1,0 +1,154 @@
+@import 'scss/mixins/breakpoints';
+@import 'scss/mixins/colors';
+@import '~scss/variables/grid';
+
+$toc-margin-top: 9.6rem;
+$nav-height: 8rem;
+$nav-margin-top: 0.8rem;
+
+.tableOfContents {
+  background-color: $white;
+  width: 100%;
+  padding: 0 1.6rem;
+
+  @include breakpoint(lg) {
+    padding: 0;
+  }
+
+  @include breakpoint(xl) {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 32px 0px;
+    margin-top: -$toc-margin-top;
+    padding: 1.6rem 1.6rem 0.8rem 1.6rem;
+  }
+
+  .labelText {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint(xl) {
+      height: auto;
+      margin: auto;
+      padding: 0 1.6rem;
+    }
+  }
+
+  .ul {
+    background-color: $white;
+    display: none;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoint(xl) {
+      display: block;
+    }
+  }
+
+  .li {
+    padding: 1.6rem;
+    position: relative;
+
+    @include breakpoint(xl) {
+      padding: 0.8rem 1.6rem;
+    }
+
+    .link {
+      color: $black;
+    }
+
+    &::before {
+      color: $teal;
+      display: inline-block;
+      font-size: 150%;
+      line-height: 1.8rem;
+      left: 0.3rem;
+      position: absolute;
+    }
+
+    &Active {
+      &::before {
+        content: '\2022';
+      }
+
+      .link {
+        color: $teal;
+      }
+    }
+  }
+
+  &Sticky {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 32px 0px;
+    left: 0;
+    padding: 0 1.6rem;
+    position: fixed;
+    top: calc(#{$nav-height});
+    width: 100vw;
+
+    @include breakpoint(lg) {
+      top: calc(#{$nav-height} + #{$nav-margin-top});
+    }
+
+    .labelText {
+      height: 4.8rem;
+      margin: 0;
+    }
+
+    @include breakpoint(xl) {
+      left: auto;
+      margin-top: -$toc-margin-top;
+      padding: 1.6rem 1.6rem 0.8rem 1.6rem;
+      top: calc(#{$toc-margin-top} + #{$nav-height} + #{$nav-margin-top});
+      width: 35rem;
+
+      .labelText {
+        height: inherit;
+      }
+    }
+  }
+
+  .label {
+    display: block;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  .arrow {
+    line-height: 156%;
+    margin-left: auto;
+    position: relative;
+    transition: transform 0.6s ease;
+    width: 2.6rem;
+
+    &:before {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include breakpoint(xl) {
+      display: none;
+    }
+  }
+}
+
+.hr {
+  display: none;
+
+  @include breakpoint(xl) {
+    border-color: darken($white, 10%);
+    border-width: 0 0 1px 0;
+    display: block;
+    margin: 1.6rem 0 0.8rem 0;
+  }
+}
+
+.toggle:checked + .tableOfContents {
+  .arrow {
+    transform: rotate(90deg);
+  }
+  .ul {
+    display: block;
+  }
+}

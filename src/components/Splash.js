@@ -1,38 +1,39 @@
-import React, { useRef, useState } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import { scroller } from "react-scroll";
-import Section from "./Section";
-import Stars from "./Stars";
-import Button from "./Button";
-import Heading from "./Heading";
-import gridStyles from "../scss/grid.module.scss";
-import styles from "./Splash.module.scss";
+import React, { useRef, useState } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import { scroller } from 'react-scroll';
+import Stars from './Stars';
+import { Button } from 'components/Buttons';
+import { Heading, Section } from 'components/Layout';
+import gridStyles from 'scss/grid.module.scss';
+import styles from './Splash.module.scss';
 
 const transitionDuration = 1600;
 
-const Splash = ({ children }) => {
+const Splash = ({ children = null }) => {
   const sectionRef = useRef(null);
   const starsRef = useRef(null);
   const [blastoffActive, setBlastoffActive] = useState(false);
 
   const handleMousemove = (e) => {
-    const moveX = -e.screenX * 0.025;
-    const moveY = -e.screenY * 0.025;
-    starsRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    sectionRef.current.style.backgroundPositionX = `${moveX}px`;
-    sectionRef.current.style.backgroundPositionY = `${moveY}px`;
+    const moveX = -e.screenX * 0.035;
+    const moveY = -e.screenY * 0.035;
+    const moveNebulaX = -e.screenX * 0.02;
+    const moveNebulaY = -e.screenY * 0.02;
+    starsRef.current.style.transform = `translate(calc(-3.5vw + ${moveX}px), calc(-3.5vh + ${moveY}px))`;
+    sectionRef.current.style.backgroundPositionX = `calc(15% + ${moveNebulaX}px)`;
+    sectionRef.current.style.backgroundPositionY = `${moveNebulaY}px`;
   };
 
   const blastoff = () => {
     setBlastoffActive(true);
 
-    scroller.scrollTo("about", {
+    scroller.scrollTo('about', {
       duration: 1500,
       delay: 300,
       isDynamic: true,
-      smooth: "easeInOutCubic",
-      offset: -53,
+      smooth: 'easeInOutCubic',
+      offset: -88,
     });
 
     const blastoffTimer = setTimeout(() => {
@@ -42,15 +43,18 @@ const Splash = ({ children }) => {
   };
 
   return (
-    <Section name="splash" classes={cx(styles.splash)} ref={sectionRef}>
-      <div className={cx(styles.splashContainer, gridStyles.flex, "container")}>
-        <Stars ref={starsRef} onMouseMove={handleMousemove} />
+    <Section name='splash' classes={cx(styles.splash)} ref={sectionRef}>
+      <div
+        onDragOver={handleMousemove}
+        onMouseMove={handleMousemove}
+        className={cx(styles.splashContainer, gridStyles.flex)}
+      >
+        <Stars ref={starsRef} />
         <div
           className={cx(
             styles.splashContent,
             gridStyles.flex,
             gridStyles.noselect,
-            "container"
           )}
         >
           <Heading classes={gridStyles.marginTop0}>
@@ -67,8 +71,8 @@ const Splash = ({ children }) => {
             })}
             onClick={blastoff}
           >
-            Let&#39;s go
-            <i className={cx(styles.rocketIcon, "fa", "fa-rocket")} />
+            LET&#39;S GO
+            <i className={cx(styles.rocketIcon, 'fa', 'fa-rocket')} />
           </Button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-@import "../scss/keyframes";
+@import 'scss/keyframes';
 
 .transition {
   animation-fill-mode: forwards;
@@ -14,7 +14,7 @@
     opacity: 1;
   }
 
-  &.slide-from-right {
+  &.slideLeft {
     // makes page jump on mobile
     // animation: slide-from-right 0.6s ease-out;
     animation: reveal 0.6s ease-out;

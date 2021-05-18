@@ -1,0 +1,20 @@
+@import 'scss/variables/grid';
+@import 'scss/mixins/breakpoints';
+
+.blogOverviewTemplate {
+  padding: 0 $gutter-width;
+
+  @include breakpoint(md) {
+    padding: 0 $gutter-width $gutter-width * 2 $gutter-width;
+  }
+}
+
+.heading {
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+
+  @include breakpoint(md) {
+    margin-bottom: 6.4rem;
+    margin-top: 6.4rem;
+  }
+}

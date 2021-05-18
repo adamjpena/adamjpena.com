@@ -1,0 +1,207 @@
+@import 'src/scss/mixins/breakpoints';
+@import 'src/scss/mixins/colors';
+@import 'src/scss/mixins/fonts';
+
+$resume-width: 820px;
+
+.resume {
+  background-color: darken(#fff, 25%);
+  color: $black;
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.25;
+  min-height: 100vh;
+
+  .breadcrumbs {
+    display: none;
+    float: left;
+    font-size: 1.8rem;
+    list-style: none;
+    margin-bottom: 0;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    width: $resume-width;
+
+    li {
+      display: inline-block;
+      width: 50%;
+
+      + li {
+        text-align: right;
+      }
+    }
+  }
+
+  .printButton {
+    display: none;
+  }
+
+  .bolder {
+    font-weight: $font-weight-bolder;
+  }
+
+  .normal {
+    font-weight: $font-weight-normal;
+  }
+
+  .link {
+    color: $black;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $rust;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  .page {
+    background-color: #fff;
+    max-width: 100%;
+    padding-bottom: 3.5rem;
+    width: $resume-width;
+  }
+
+  .header {
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 3.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+    font-weight: $font-weight-normal;
+  }
+
+  .hr {
+    border-top-color: $black;
+    border-top-width: 2px;
+    margin: 0;
+  }
+
+  .heading1 {
+    font-size: 1.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+
+  .heading2 {
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .heading3 {
+    font-weight: 400;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+  }
+
+  .ul {
+    margin-bottom: 1rem;
+    padding-left: 1.6rem;
+
+    li > span {
+      position: relative;
+      left: -0.2em;
+    }
+  }
+
+  .stack {
+    list-style-type: none;
+  }
+
+  .column {
+    display: inline-block;
+    float: left;
+    padding: 0 2rem;
+
+    &:nth-of-type(1) {
+      padding-top: 2rem;
+    }
+  }
+}
+
+@media (min-width: $resume-width + 1) {
+  .resume {
+    .breadcrumbs {
+      margin: 2rem 0;
+      padding: 0;
+    }
+
+    .printButton {
+      display: inline-block;
+    }
+
+    .page {
+      box-shadow: 2px 2px 1px lighten($black, 30%);
+    }
+  }
+}
+
+@include breakpoint(md) {
+  .resume {
+    .breadcrumbs {
+      display: block;
+    }
+
+    .column {
+      padding-top: 2rem;
+
+      &.left {
+        float: left;
+        padding-left: 4.5rem;
+        padding-right: 1.5rem;
+        width: 33%;
+      }
+
+      &.right {
+        float: right;
+        padding-left: 3rem;
+        padding-right: 4.5rem;
+        width: 67%;
+      }
+    }
+  }
+}
+
+@media print {
+  .resume {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-top: 0;
+
+    .page {
+      max-width: 100%;
+      padding-bottom: 0;
+      width: 100%;
+    }
+
+    .header {
+      padding-top: 0;
+    }
+
+    .column {
+      padding-top: 2rem;
+
+      &.left {
+        float: left;
+        width: 31%;
+      }
+
+      &.right {
+        float: right;
+        width: 69%;
+      }
+    }
+
+    a[href]:after {
+      content: none !important;
+    }
+  }
+}

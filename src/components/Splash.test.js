@@ -1,18 +1,12 @@
 /* eslint-env jest */
-import React from "react";
-import ReactDOM from "react-dom";
-import Splash from "./Splash";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import { render } from 'test/test-utils';
+import Splash from './Splash';
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(
-    <Router>
-      <Splash>
-        <></>
-      </Splash>
-    </Router>,
-    div
+it('renders without crashing', () => {
+  render(
+    <Splash>
+      <></>
+    </Splash>,
   );
-  ReactDOM.unmountComponentAtNode(div);
 });

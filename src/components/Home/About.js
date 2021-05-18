@@ -1,14 +1,14 @@
 import React from 'react';
 import cx from 'classnames';
-import TransitionOnEnter, { TRANSITIONS } from './TransitionOnEnter';
-import Image from './Layout/Image';
-import Link from './helpers/Link';
+import { TransitionOnEnter, TRANSITIONS } from '../helpers';
+import Image from '../Layout/Image';
+import Link from '../helpers/Link';
 import { Container, Grid, Cell } from 'components/Grid';
 
 import gridStyles from 'scss/grid.module.scss';
 import styles from './About.module.scss';
 
-import { Heading, Section } from './Layout';
+import { Heading, Section } from '../Layout';
 
 import portraitVertical from 'assets/images/adam-portrait-vertical.jpg';
 import portraitVertical2x from 'assets/images/adam-portrait-vertical@2x.jpg';

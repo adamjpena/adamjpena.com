@@ -1,6 +1,6 @@
-@import 'scss/mixins/colors';
+@import 'scss/variables/colors';
+@import 'scss/variables/fonts';
 @import 'scss/mixins/breakpoints';
-@import 'scss/mixins/fonts';
 
 .button {
   background-color: $white;

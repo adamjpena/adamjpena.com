@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { scroller } from 'react-scroll';
-import { Stars } from './Galaxy';
+import { Stars } from 'components/Galaxy';
 import { Button } from 'components/Buttons';
 import { Heading, Section } from 'components/Layout';
 import gridStyles from 'scss/grid.module.scss';

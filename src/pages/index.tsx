@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
-import Helmet from 'react-helmet';
-import Splash from 'components/Splash';
-import About from 'components/About';
+
+import { About, Splash } from 'components/Home';
 import { Nav } from 'components/navigation';
 import styles from 'scss/index.module.scss';
 import { BaseTemplate } from 'templates';

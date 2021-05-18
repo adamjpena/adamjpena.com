@@ -20,7 +20,7 @@ const PostCard = ({
   };
 
   const isTertiaryPost = !isHighlight && !isSecondaryPost;
-  console.log(heroImage.description);
+
   return (
     <div
       className={cx(styles.postCard, {

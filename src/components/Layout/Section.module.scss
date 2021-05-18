@@ -3,6 +3,8 @@
 .section {
   padding-bottom: 5rem;
   padding-top: 5rem;
+  position: relative;
+  z-index: 1;
 }
 
 @include breakpoint(lg) {

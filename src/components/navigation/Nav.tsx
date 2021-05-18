@@ -34,6 +34,9 @@ const Nav = ({
     };
   });
 
+  const shouldShowBlogLink =
+    gatingData.shouldShowBlog || process.env.NODE_ENV === 'development';
+
   return (
     <nav
       className={cx(styles.nav, gridStyles.hidePrint, {
@@ -52,7 +55,7 @@ const Nav = ({
                   <Image src={nLogo} alt='Adam J Peña Logo' />
                 </Link>
               </div>
-              {gatingData.shouldShowBlog && (
+              {shouldShowBlogLink && (
                 <Link className={styles.navLink} to='/blog/'>
                   Blog
                 </Link>
@@ -60,7 +63,11 @@ const Nav = ({
               <Link className={styles.navLink} to='/resume/'>
                 Resume
               </Link>
-              <div className={cx(styles.navItem, styles.navItemEnd)}>
+              <div
+                className={cx(styles.navItem, styles.navItemEnd, {
+                  [styles.navItemEndHiddenXs]: shouldShowBlogLink,
+                })}
+              >
                 <ContactButton
                   {...{ setShouldShowEmailCta, shouldShowEmailCta }}
                 >

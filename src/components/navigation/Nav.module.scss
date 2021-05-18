@@ -69,7 +69,13 @@ $nav-link-padding: 1.6rem;
     padding: 0 $nav-link-padding;
 
     &End {
+      display: none;
       margin-left: auto;
+      margin-left: auto;
+
+      @include breakpoint(sm) {
+        display: flex;
+      }
     }
   }
 

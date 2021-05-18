@@ -10,7 +10,7 @@ import styles from './Splash.module.scss';
 
 const transitionDuration = 1600;
 
-const Splash = ({ children = null }) => {
+const Splash = ({ children = null, isActiveNav = false }) => {
   const sectionRef = useRef(null);
   const starsRef = useRef(null);
   const [blastoffActive, setBlastoffActive] = useState(false);
@@ -43,13 +43,20 @@ const Splash = ({ children = null }) => {
   };
 
   return (
-    <Section name='splash' classes={cx(styles.splash)} ref={sectionRef}>
+    <Section
+      name='splash'
+      classes={cx(styles.splash, { [styles.splashWithActiveNav]: isActiveNav })}
+      ref={sectionRef}
+    >
       <div
         onDragOver={handleMousemove}
         onMouseMove={handleMousemove}
         className={cx(styles.splashContainer, gridStyles.flex)}
       >
-        <Stars ref={starsRef} />
+        <Stars
+          ref={starsRef}
+          className={cx({ [gridStyles.hidden]: isActiveNav })}
+        />
         <div
           className={cx(
             styles.splashContent,

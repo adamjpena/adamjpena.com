@@ -4,6 +4,7 @@
 @import 'scss/keyframes';
 
 .splash {
+  background-attachment: fixed;
   background-color: #090a1a;
   background-image: url('../assets/images/nebula-background.jpg');
   background-position: 0;
@@ -13,6 +14,10 @@
   overflow-x: hidden;
   padding-bottom: 0;
   position: relative;
+
+  &WithActiveNav {
+    z-index: auto;
+  }
 
   &::after {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=)

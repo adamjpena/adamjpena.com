@@ -7,10 +7,10 @@ import styles from 'scss/index.module.scss';
 import { BaseTemplate } from 'templates';
 
 const Index: FC = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActiveNav, setIsActiveNav] = useState(false);
 
   const showNavbar = (shouldShowNavBar) => {
-    setIsActive(shouldShowNavBar);
+    setIsActiveNav(shouldShowNavBar);
   };
   const [shouldShowEmailCta, setShouldShowEmailCta] = useState(false);
 
@@ -22,10 +22,10 @@ const Index: FC = () => {
       }
     >
       <div className={styles.index}>
-        <Splash>
+        <Splash {...{ isActiveNav }}>
           <Nav
-            isSticky={isActive}
-            isDark={!isActive}
+            isSticky={isActiveNav}
+            isDark={!isActiveNav}
             revealAfterSplash
             {...{ setShouldShowEmailCta, shouldShowEmailCta, showNavbar }}
           />

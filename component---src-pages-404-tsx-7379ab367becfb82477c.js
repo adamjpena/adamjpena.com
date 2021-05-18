@@ -1,0 +1,2 @@
+(self.webpackChunkadamjpena_com=self.webpackChunkadamjpena_com||[]).push([[218],{9786:function(e,n,a){"use strict";a.r(n);var t=a(7294),l=a(4527),u=a(8635),c=a(8083);n.default=function(){return t.createElement(l.zw,null,t.createElement(u.W2,null,t.createElement(c.X6,null,"404 not found")))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-7379ab367becfb82477c.js.map

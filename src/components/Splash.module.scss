@@ -4,16 +4,25 @@
 @import 'scss/keyframes';
 
 .splash {
-  background-attachment: fixed;
-  background-color: #090a1a;
-  background-image: url('../assets/images/nebula-background.jpg');
-  background-position: 0;
   color: $off-white;
   height: calc(100vh + #{$nav-height} + #{$nav-margin-top});
   max-width: 100vw;
   overflow-x: hidden;
   padding-bottom: 0;
   position: relative;
+
+  .bg {
+    background-color: #090a1a;
+    background-image: url('assets/images/splash/nebula-background.jpg');
+    background-position: 15% 15%;
+    background-size: auto 125vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
 
   &WithActiveNav {
     z-index: auto;
@@ -29,10 +38,6 @@
     top: 0;
     width: 100%;
     z-index: 0;
-  }
-
-  @media (min-width: 1824px) {
-    background-size: 105%;
   }
 }
 
@@ -56,17 +61,33 @@
     display: inline-block;
     padding-left: 1rem;
     transition: all 0.25s;
+
+    &::before {
+      display: inline-block;
+    }
   }
 
-  &.inactive:hover .rocketIcon {
-    animation: shake 0.82s infinite;
-    transform: rotate(-45deg);
+  &.inactive {
+    &:hover {
+      .rocketIcon {
+        animation: shake 0.82s infinite;
+
+        &::before {
+          transform: rotate(-45deg);
+        }
+      }
+    }
   }
 
-  &.active .rocketIcon {
-    animation: blastoff 1.6s ease-in;
-    animation-fill-mode: forwards;
-    color: $rust;
-    transform: rotate(-45deg);
+  &.active {
+    .rocketIcon {
+      animation: blastoff 1.6s ease-in;
+      animation-fill-mode: forwards;
+      color: $rust;
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+    }
   }
 }

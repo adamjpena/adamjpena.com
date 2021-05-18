@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { scroller } from 'react-scroll';
-import Stars from './Stars';
+import { Stars } from './Galaxy';
 import { Button } from 'components/Buttons';
 import { Heading, Section } from 'components/Layout';
 import gridStyles from 'scss/grid.module.scss';
@@ -22,7 +22,7 @@ const Splash = ({ children = null, isActiveNav = false }) => {
     const moveNebulaY = -e.screenY * 0.02;
     starsRef.current.style.transform = `translate(calc(-3.5vw + ${moveX}px), calc(-3.5vh + ${moveY}px))`;
     sectionRef.current.style.backgroundPositionX = `calc(15% + ${moveNebulaX}px)`;
-    sectionRef.current.style.backgroundPositionY = `${moveNebulaY}px`;
+    sectionRef.current.style.backgroundPositionY = `calc(15% + ${moveNebulaY}px)`;
   };
 
   const blastoff = () => {
@@ -46,11 +46,11 @@ const Splash = ({ children = null, isActiveNav = false }) => {
     <Section
       name='splash'
       classes={cx(styles.splash, { [styles.splashWithActiveNav]: isActiveNav })}
-      ref={sectionRef}
     >
+      <div ref={sectionRef} className={styles.bg} />
       <div
-        onDragOver={handleMousemove}
         onMouseMove={handleMousemove}
+        onTouchMove={handleMousemove}
         className={cx(styles.splashContainer, gridStyles.flex)}
       >
         <Stars

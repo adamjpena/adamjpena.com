@@ -1,6 +1,6 @@
-import React, { forwardRef } from "react";
-import styles from "./Stars.module.scss";
-import Particles from "react-particles-js";
+import React, { forwardRef } from 'react';
+import styles from './Stars.module.scss';
+import Particles from 'react-particles-js';
 
 const params = {
   particles: {
@@ -12,19 +12,19 @@ const params = {
       },
     },
     color: {
-      value: "#fff",
+      value: '#fff',
     },
     shape: {
-      type: "circle",
+      type: 'circle',
       stroke: {
         width: 0,
-        color: "#000",
+        color: '#000',
       },
       polygon: {
         nb_sides: 5,
       },
       image: {
-        src: "img/github.svg",
+        src: 'img/github.svg',
         width: 100,
         height: 100,
       },
@@ -52,17 +52,17 @@ const params = {
     line_linked: {
       enable: false,
       distance: 150,
-      color: "#fff",
+      color: '#fff',
       opacity: 0.4,
       width: 1,
     },
     move: {
       enable: true,
       speed: 1,
-      direction: "none",
+      direction: 'none',
       random: true,
       straight: false,
-      out_mode: "out",
+      out_mode: 'out',
       bounce: false,
       attract: {
         enable: false,
@@ -72,15 +72,15 @@ const params = {
     },
   },
   interactivity: {
-    detect_on: "canvas",
+    detect_on: 'canvas',
     events: {
       onhover: {
         enable: true,
-        mode: "bubble",
+        mode: 'bubble',
       },
       onclick: {
         enable: true,
-        mode: "repulse",
+        mode: 'repulse',
       },
       resize: true,
     },

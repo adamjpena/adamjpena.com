@@ -30,7 +30,9 @@ const Index: FC = () => {
             {...{ setShouldShowEmailCta, shouldShowEmailCta, showNavbar }}
           />
         </Splash>
-        <About />
+        <div className={styles.indexMain}>
+          <About />
+        </div>
       </div>
     </BaseTemplate>
   );

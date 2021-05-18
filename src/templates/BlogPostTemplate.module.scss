@@ -9,13 +9,15 @@
   height: auto;
   margin: 0 auto;
   max-width: 104rem;
+  position: relative;
+  z-index: -1;
 
   @include breakpoint(md) {
-    height: 38.4rem;
+    max-height: 38.4rem;
   }
 
   @include breakpoint(lg) {
-    height: 50rem;
+    max-height: 50rem;
   }
 }
 

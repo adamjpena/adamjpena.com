@@ -1,10 +1,15 @@
-import React from "react";
-import cx from "classnames";
-import styles from "./Link.module.scss";
-import { Link as GatsbyLink } from "gatsby";
-import { Link as RSLink } from "react-scroll";
+import React from 'react';
+import cx from 'classnames';
+import styles from './Link.module.scss';
+import { Link as GatsbyLink } from 'gatsby';
+import { Link as RSLink } from 'react-scroll';
 
-const Link = ({ classes = "", scroll = false, ...restProps }) => {
+const Link = ({
+  classes = '',
+  scroll = false,
+  targetBlank = false,
+  ...restProps
+}) => {
   const className = cx(styles.link, classes);
   if (scroll) {
     return (
@@ -20,20 +25,24 @@ const Link = ({ classes = "", scroll = false, ...restProps }) => {
   }
   if (
     restProps.to ||
-    (restProps.href?.indexOf("//") === -1 &&
-      restProps.href?.indexOf("mailto:") === -1)
+    (restProps.href?.indexOf('//') === -1 &&
+      restProps.href?.indexOf('mailto:') === -1)
   ) {
     const to = restProps.to || restProps.href;
     return <GatsbyLink {...{ className, to }} {...restProps} />;
   }
   if (restProps.href) {
     return (
-      <a {...{ className }} {...restProps}>
-        {restProps.children || " "}
+      <a
+        {...{ className }}
+        {...(targetBlank ? { target: '_blank', rel: 'noopener' } : {})}
+        {...restProps}
+      >
+        {restProps.children || ' '}
       </a>
     );
   }
-  return <button type="button" {...{ className }} {...restProps} />;
+  return <button type='button' {...{ className }} {...restProps} />;
 };
 
 export default Link;

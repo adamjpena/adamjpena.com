@@ -2,7 +2,7 @@ import React, { createElement, useEffect } from 'react';
 import marksy from 'marksy';
 import { Heading } from 'components/Layout';
 import { Link } from 'components/helpers';
-import { TableOfContents } from 'components/Blog';
+import { PostMeta, TableOfContents } from 'components/Blog';
 import { scrollSpy } from 'react-scroll';
 
 import styles from './Body.module.scss';
@@ -38,7 +38,9 @@ const getMarkup = ({ body }) => {
   return compile(body).tree;
 };
 
-const Body = ({ body }) => {
+const Body = ({ body, title, slug }) => {
+  const wordCount = body.replace(/[^\w ]/g, '').split(/\s+/).length;
+  const readingTime = Math.floor(wordCount / 228) + 1;
   const content = getMarkup({ body }) || [];
   const headings = content.filter(({ props }) => props.id);
 
@@ -49,7 +51,10 @@ const Body = ({ body }) => {
   return (
     <div className={styles.bodyGrid}>
       {headings.length > 0 && <TableOfContents {...{ headings }} />}
-      <div className={styles.content}>{content}</div>
+      <div className={styles.content}>
+        <PostMeta {...{ readingTime, slug, title }} />
+        {content}
+      </div>
     </div>
   );
 };

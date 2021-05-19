@@ -46,7 +46,12 @@
 }
 
 .splashContent {
+  padding: 0 1.6rem;
   z-index: 2;
+
+  @include breakpoint(md) {
+    padding: 0;
+  }
 }
 
 .rocketCta {

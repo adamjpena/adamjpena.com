@@ -22,8 +22,11 @@ const Nav = ({
   shouldShowEmailCta = false,
 }) => {
   const handleScroll = throttle(() => {
-    const revealHeight = revealAfterSplash ? window.innerHeight + 88 : 300;
-    showNavbar(window.scrollY >= revealHeight);
+    if (!revealAfterSplash) {
+      showNavbar(window.scrollY >= 300);
+    }
+    const mobileOffset = window.innerHeight > window.innerWidth ? 90 : 0;
+    showNavbar(window.scrollY >= window.innerHeight + mobileOffset);
   }, 33);
 
   useEffect(() => {

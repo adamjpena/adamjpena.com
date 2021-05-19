@@ -33,7 +33,7 @@ const Splash = ({ children = null, isActiveNav = false }) => {
       delay: 300,
       isDynamic: true,
       smooth: 'easeInOutCubic',
-      offset: -88,
+      offset: -118,
     });
 
     const blastoffTimer = setTimeout(() => {

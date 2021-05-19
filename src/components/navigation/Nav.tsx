@@ -24,7 +24,9 @@ const Nav = ({
   const handleScroll = throttle(() => {
     if (!revealAfterSplash) {
       showNavbar(window.scrollY >= 300);
+      return;
     }
+
     const mobileOffset = window.innerHeight > window.innerWidth ? 90 : 0;
     showNavbar(window.scrollY >= window.innerHeight + mobileOffset);
   }, 33);

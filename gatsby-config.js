@@ -64,6 +64,7 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-contentful-optional-fields',
       options: {

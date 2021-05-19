@@ -18,11 +18,17 @@
 .postCard {
   padding-bottom: $gutter-width-half;
 
+  &__tags {
+    font-family: 1.4rem;
+    margin: 0;
+  }
+
   &__title {
     color: $black;
     font-size: 2.2rem;
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.2;
+    margin-top: 0.8rem;
     text-underline-offset: 20%;
 
     &:hover {
@@ -43,6 +49,7 @@
     }
     @include breakpoint(md) {
       border-bottom: none;
+      padding-right: $gutter-width;
     }
   }
 

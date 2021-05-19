@@ -1,9 +1,6 @@
+@import 'scss/variables/colors';
 @import 'scss/variables/grid';
 @import 'scss/mixins/breakpoints';
-
-.blogPostTemplate {
-  padding-bottom: $gutter-width;
-}
 
 .header {
   height: auto;
@@ -21,22 +18,91 @@
   }
 }
 
-.author {
+.headerCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerImage {
+  margin-top: 3.2rem;
+
+  @include breakpoint(md) {
+    margin-top: 0;
+  }
+}
+
+.headingSmall {
   font-size: 1.4rem;
   padding-top: 1.6rem;
+  margin: 0;
 }
 
 .heading {
   font-size: 4.2rem;
   font-weight: 600;
   margin-bottom: 1.6rem;
+  margin-top: 0;
 }
 
 .content {
   padding: 0 $gutter-width;
   text-align: left;
 
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
+    padding: 0 $gutter-width 0 0;
+  }
+
+  @include breakpoint(xl) {
     padding: 0;
+  }
+}
+
+.blogPostTemplate {
+  padding-bottom: $gutter-width;
+  // dark header wrapper themes
+  &rust,
+  &blue,
+  &maroon,
+  &darkBlue {
+    .header {
+      color: $white;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  &rust {
+    .headerWrapper {
+      background-color: $rust;
+    }
+
+    h2 {
+      color: $rust;
+    }
+
+    li::marker {
+      color: $rust;
+    }
+  }
+
+  &blue {
+    .headerWrapper {
+      background-color: $blue;
+    }
+  }
+
+  &maroon {
+    .headerWrapper {
+      background-color: $maroon;
+    }
+  }
+
+  &darkBlue {
+    .headerWrapper {
+      background-color: $dark-blue;
+    }
   }
 }

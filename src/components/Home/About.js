@@ -59,7 +59,10 @@ const About = () => (
         </Cell>
         <Cell padding={15} width={{ xs: 12, lg: 8 }}>
           <TransitionOnEnter transition={TRANSITIONS.GROW}>
-            <Heading level={2} classes={gridStyles.marginTop0}>
+            <Heading
+              level={2}
+              classes={cx(styles.aboutHeading, gridStyles.marginTop0)}
+            >
               About Me
             </Heading>
             <Heading level={4}>Creating beautiful, minimal interfaces</Heading>

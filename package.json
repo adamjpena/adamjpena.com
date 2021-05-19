@@ -12,6 +12,7 @@
     "font-awesome": "^4.7.0",
     "gatsby": "^3.5.0",
     "gatsby-image": "^3.5.0",
+    "gatsby-plugin-contentful-optional-fields": "^2.2.0",
     "gatsby-plugin-react-helmet": "^4.5.0",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-resolve-src": "^2.1.0",

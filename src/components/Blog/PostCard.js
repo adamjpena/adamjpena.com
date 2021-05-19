@@ -5,6 +5,7 @@ import styles from './PostCard.module.scss';
 import gridStyles from 'scss/grid.module.scss';
 import { Grid, Cell, GRID_CONSTANTS } from 'components/Grid';
 import { GatsbyImage, Heading } from 'components/Layout';
+import { titleCase } from 'lib/utils';
 
 const PostCard = ({
   description,
@@ -13,6 +14,7 @@ const PostCard = ({
   isSecondaryPost = false,
   slug,
   title,
+  tags,
 }) => {
   const cellWidths = {
     xs: 2,
@@ -46,6 +48,7 @@ const PostCard = ({
           width={cellWidths}
           className={cx({ [styles.postCard__highlightBody]: isHighlight })}
         >
+          <p className={styles.postCard__tags}>{titleCase(tags[0])}</p>
           <Link to={slug}>
             <Heading
               classes={styles.postCard__title}

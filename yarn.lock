@@ -7168,6 +7168,10 @@ gatsby-page-utils@^1.5.0:
     lodash "^4.17.21"
     micromatch "^4.0.2"
 
+gatsby-plugin-contentful-optional-fields@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-contentful-optional-fields/-/gatsby-plugin-contentful-optional-fields-2.2.0.tgz#bb8168afbc2a7ca27649f049ac7362333e66dd6a"
+
 gatsby-plugin-page-creator@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-3.5.0.tgz#14c4150c0fc137ba2210eee8b37ab600199048ed"

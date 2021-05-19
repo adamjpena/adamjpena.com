@@ -65,6 +65,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-contentful-optional-fields',
+      options: {
+        optionalFields: {
+          contentfulBlogPost: {
+            primaryColor: 'String',
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },

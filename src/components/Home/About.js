@@ -21,8 +21,8 @@ const About = () => (
       <Grid margin={-15} columns={12}>
         <Cell
           padding={15}
-          width={{ xs: 8, md: 6, lg: 4 }}
-          push={{ xs: 2, md: 3, lg: 'auto' }}
+          width={{ xs: 12, sm: 10, md: 8, lg: 4 }}
+          push={{ sm: 1, md: 2, lg: 'auto' }}
         >
           <TransitionOnEnter transition={TRANSITIONS.REVEAL}>
             <div>

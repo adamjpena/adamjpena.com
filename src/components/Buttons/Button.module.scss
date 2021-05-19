@@ -52,15 +52,15 @@
   }
 
   &.secondary {
-    background-color: $teal;
-    border-color: $teal;
+    background-color: $blue;
+    border-color: $blue;
     color: $white;
 
     &:hover,
     &:focus,
     &:active {
-      background-color: darken($teal, 8%);
-      border-color: darken($teal, 8%);
+      background-color: darken($blue, 8%);
+      border-color: darken($blue, 8%);
       color: $white;
     }
   }
@@ -68,7 +68,7 @@
   &.asText {
     background-color: transparent;
     border-color: transparent;
-    color: $teal;
+    color: $blue;
 
     &:hover,
     &:focus,

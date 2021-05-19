@@ -10,7 +10,7 @@
   margin: 0 auto;
   max-width: 104rem;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 
   @include breakpoint(md) {
     max-height: 38.4rem;
